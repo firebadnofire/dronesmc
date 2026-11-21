@@ -8,7 +8,7 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBat;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.culling.ClippingHelperImpl;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;
@@ -21,6 +21,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.client.event.InputUpdateEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -91,8 +92,10 @@ public final class ClientProxy extends CommonProxy {
     @SubscribeEvent(priority = EventPriority.HIGHEST) public void overlayCamera(RenderWorldLastEvent event) {
         Minecraft mc = Minecraft.getMinecraft();
         if (active != null && mc.getRenderViewEntity() == active) {
-            // Overlay mods read these direction vectors instead of CameraSetup angles.
-            ActiveRenderInfo.updateRenderInfo(active, mc.gameSettings.thirdPersonView == 2);
+            // Xaero retains this shared helper's matrices for its HUD projection.
+            // Refresh them from the world camera, before body/overlay rendering.
+            // Leave ActiveRenderInfo's camera-local offset from vanilla setup intact.
+            ClippingHelperImpl.getInstance();
         }
     }
     @SubscribeEvent public void hand(RenderHandEvent event) { if (active != null) event.setCanceled(true); }
@@ -100,6 +103,10 @@ public final class ClientProxy extends CommonProxy {
         Minecraft mc = Minecraft.getMinecraft();
         if (active == null || mc.player == null || !mc.player.isEntityAlive()) return;
         float partial = event.getPartialTicks();
+        Vec3d bodyPosition = mc.player.getPositionVector();
+        Vec3d renderedBody = mc.player.getPositionEyes(partial).subtract(0, mc.player.getEyeHeight(), 0);
+        AxisAlignedBB bodyBox = mc.player.getEntityBoundingBox().offset(renderedBody.subtract(bodyPosition));
+        if (!shouldRenderBody(active.getPositionEyes(partial), bodyBox)) return;
         RenderManager manager = mc.getRenderManager();
         Entity previousView = manager.renderViewEntity;
         float previousLightX = OpenGlHelper.lastBrightnessX;
@@ -122,6 +129,10 @@ public final class ClientProxy extends CommonProxy {
             mc.entityRenderer.disableLightmap();
             GlStateManager.popMatrix();
         }
+    }
+    static boolean shouldRenderBody(Vec3d camera, AxisAlignedBB bodyBox) {
+        // Keep the near plane and armor out of the camera when flying through the body.
+        return !bodyBox.grow(0.25).contains(camera);
     }
     @SubscribeEvent public void camera(EntityViewRenderEvent.CameraSetup event) {
         Minecraft mc = Minecraft.getMinecraft();

@@ -12,8 +12,8 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
-@Mod(modid = DronesMC.ID, name = "DronesMC", version = "0.0.2", acceptedMinecraftVersions = "[1.12.2]",
-        acceptableRemoteVersions = "[0.0.2]",
+@Mod(modid = DronesMC.ID, name = "DronesMC", version = "0.0.3", acceptedMinecraftVersions = "[1.12.2]",
+        acceptableRemoteVersions = "[0.0.3]",
         dependencies = "required-after:forge@[14.23.5.2859,)")
 @Mod.EventBusSubscriber(modid = DronesMC.ID)
 public final class DronesMC {
