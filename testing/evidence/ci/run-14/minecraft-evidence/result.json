@@ -1,0 +1,13 @@
+{
+  "commit": "a8e54bf58149ed916dfdf5f457ac82878fca5b7e",
+  "sha256": "9a9d1c7bd8866145003608014075125c4fcbc838839c16837f1eb7e63a47182e",
+  "version": "0.1.1-beta",
+  "startup": true,
+  "mod_loaded": true,
+  "observation": true,
+  "shutdown": true,
+  "passed": true,
+  "installer_sha256": "dbba1cd1bf34a4b82148bac50a6150f63ffcb2d5dc7d88a0508c27fdcff15b76",
+  "ready_after_seconds": 5.5044187319981575,
+  "healthy_seconds": 10.01432492800086
+}

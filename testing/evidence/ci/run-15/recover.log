@@ -1,0 +1,254 @@
+2026-11-21T02:48:07.2483085Z Runner c3d6a19b-ccd0-43ce-94c4-98086e60a879 (version:v12.13.2) received task 2954 of job recover, triggered by event: workflow_dispatch
+2026-11-21T02:48:07.2515075Z workflow prepared
+2026-11-21T02:48:07.2801921Z 🚀  Start image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496
+2026-11-21T02:48:07.2999917Z   🐳  docker create image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496 platform=linux/amd64 entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+2026-11-21T02:48:07.4333088Z   🐳  docker run image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496 platform=linux/amd64 entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+2026-11-21T02:48:07.7151298Z   ☁️  git fetch 'https://data.forgejo.org/actions/checkout' skipped; ref=3d3c42e5aac5ba805825da76410c181273ba90b1 cached
+2026-11-21T02:48:07.7595345Z   ☁️  git fetch 'https://data.forgejo.org/actions/upload-artifact' skipped; ref=ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5 cached
+2026-11-21T02:48:07.8016168Z ⭐ Run Main Install release utilities
+2026-11-21T02:48:07.8087090Z   🐳  docker exec cmd=[sh /var/run/act/97a4aacc55a88e61.sh] user= workdir=
+2026-11-21T02:48:07.8769218Z   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0.sh] user= workdir=
+2026-11-21T02:48:08.1557848Z Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+2026-11-21T02:48:08.2208930Z Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+2026-11-21T02:48:08.3467856Z Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+2026-11-21T02:48:08.3679503Z Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+2026-11-21T02:48:08.5560178Z Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+2026-11-21T02:48:08.5795194Z Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [378 kB]
+2026-11-21T02:48:09.1957006Z Fetched 9417 kB in 1s (7622 kB/s)
+2026-11-21T02:48:09.5040857Z Reading package lists...
+2026-11-21T02:48:09.8340471Z Reading package lists...
+2026-11-21T02:48:09.9337249Z Building dependency tree...
+2026-11-21T02:48:09.9339093Z Reading state information...
+2026-11-21T02:48:10.0311762Z git is already the newest version (1:2.39.5-0+deb12u3).
+2026-11-21T02:48:10.0312176Z python3 is already the newest version (3.11.2-1+b1).
+2026-11-21T02:48:10.0312368Z python3 set to manually installed.
+2026-11-21T02:48:10.0312513Z gnupg is already the newest version (2.2.40-1.1+deb12u2).
+2026-11-21T02:48:10.0312698Z ca-certificates is already the newest version (20250419~deb12u2).
+2026-11-21T02:48:10.0312850Z 0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+2026-11-21T02:48:10.1913137Z ::add-matcher::/run/act/actions/ab/9e4e9d2740e5ec5ecd8e404ad47c368949ce53bbb18d377163d38cff88f233/dist/problem-matcher.json
+2026-11-21T02:48:10.1914724Z Syncing repository: firebadnofire/dronesmc
+2026-11-21T02:48:10.1916621Z ##[group]Getting Git version info
+2026-11-21T02:48:10.1916835Z Working directory is '/workspace/firebadnofire/dronesmc'
+2026-11-21T02:48:10.1936048Z [command]/usr/bin/git version
+2026-11-21T02:48:10.1974781Z git version 2.39.5
+2026-11-21T02:48:10.1989421Z ##[endgroup]
+2026-11-21T02:48:10.1996725Z Temporarily overriding HOME='/tmp/27617fcb-6b2a-4796-9f44-731307f575f6' before making global git config changes
+2026-11-21T02:48:10.1996881Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-21T02:48:10.1999858Z [command]/usr/bin/git config --global --add safe.directory /workspace/firebadnofire/dronesmc
+2026-11-21T02:48:10.2043357Z Deleting the contents of '/workspace/firebadnofire/dronesmc'
+2026-11-21T02:48:10.2046530Z ##[group]Determining repository object format
+2026-11-21T02:48:10.2047684Z ##[endgroup]
+2026-11-21T02:48:10.2048123Z ##[group]Initializing the repository
+2026-11-21T02:48:10.2050522Z [command]/usr/bin/git init /workspace/firebadnofire/dronesmc
+2026-11-21T02:48:10.2083904Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-21T02:48:10.2084099Z hint: is subject to change. To configure the initial branch name to use in all
+2026-11-21T02:48:10.2084255Z hint: of your new repositories, which will suppress this warning, call:
+2026-11-21T02:48:10.2084390Z hint: 
+2026-11-21T02:48:10.2084597Z hint: 	git config --global init.defaultBranch <name>
+2026-11-21T02:48:10.2084732Z hint: 
+2026-11-21T02:48:10.2084867Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-21T02:48:10.2085073Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-21T02:48:10.2085237Z hint: 
+2026-11-21T02:48:10.2085421Z hint: 	git branch -m <name>
+2026-11-21T02:48:10.2089717Z Initialized empty Git repository in /workspace/firebadnofire/dronesmc/.git/
+2026-11-21T02:48:10.2097672Z [command]/usr/bin/git remote add origin https://pubcode.archuser.org/firebadnofire/dronesmc
+2026-11-21T02:48:10.2123807Z ##[endgroup]
+2026-11-21T02:48:10.2124248Z ##[group]Disabling automatic garbage collection
+2026-11-21T02:48:10.2126403Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-21T02:48:10.2147851Z ##[endgroup]
+2026-11-21T02:48:10.2148260Z ##[group]Setting up auth
+2026-11-21T02:48:10.2148617Z Removing SSH command configuration
+2026-11-21T02:48:10.2151275Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T02:48:10.2173115Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T02:48:10.2458400Z Removing HTTP extra header
+2026-11-21T02:48:10.2464051Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader
+2026-11-21T02:48:10.2492512Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader' && git config --local --unset-all 'http.https://pubcode.archuser.org/.extraheader' || :"
+2026-11-21T02:48:10.2791893Z Removing includeIf entries pointing to credentials config files
+2026-11-21T02:48:10.2799141Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T02:48:10.2833323Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T02:48:10.3116679Z [command]/usr/bin/git config --file /tmp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config http.https://pubcode.archuser.org/.extraheader AUTHORIZATION: basic ***
+2026-11-21T02:48:10.3157925Z [command]/usr/bin/git config --local includeIf.gitdir:/workspace/firebadnofire/dronesmc/.git.path /tmp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config
+2026-11-21T02:48:10.3186525Z [command]/usr/bin/git config --local includeIf.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path /tmp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config
+2026-11-21T02:48:10.3224332Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config
+2026-11-21T02:48:10.3265942Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config
+2026-11-21T02:48:10.3294585Z ##[endgroup]
+2026-11-21T02:48:10.3295036Z ##[group]Fetching the repository
+2026-11-21T02:48:10.3303187Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-11-21T02:48:10.7285824Z From https://pubcode.archuser.org/firebadnofire/dronesmc
+2026-11-21T02:48:10.7286292Z  * [new branch]      main       -> origin/main
+2026-11-21T02:48:10.7286775Z  * [new tag]         v0.0.1     -> v0.0.1
+2026-11-21T02:48:10.7314704Z [command]/usr/bin/git branch --list --remote origin/main
+2026-11-21T02:48:10.7342385Z   origin/main
+2026-11-21T02:48:10.7346801Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-11-21T02:48:10.7375491Z 97704cd473ce36392b5fbf14dc06068782aad6cc
+2026-11-21T02:48:10.7378029Z ##[endgroup]
+2026-11-21T02:48:10.7378689Z ##[group]Determining the checkout info
+2026-11-21T02:48:10.7379233Z ##[endgroup]
+2026-11-21T02:48:10.7380719Z [command]/usr/bin/git sparse-checkout disable
+2026-11-21T02:48:10.7407308Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-21T02:48:10.7442495Z ##[group]Checking out the ref
+2026-11-21T02:48:10.7446668Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-21T02:48:10.7586319Z Switched to a new branch 'main'
+2026-11-21T02:48:10.7586846Z branch 'main' set up to track 'origin/main'.
+2026-11-21T02:48:10.7591248Z ##[endgroup]
+2026-11-21T02:48:10.7630876Z [command]/usr/bin/git log -1 --format=%H
+2026-11-21T02:48:10.7664334Z 97704cd473ce36392b5fbf14dc06068782aad6cc
+2026-11-21T02:48:10.7673560Z ##[group]Removing auth
+2026-11-21T02:48:10.7673704Z Removing SSH command configuration
+2026-11-21T02:48:10.7675588Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T02:48:10.7717230Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T02:48:10.8041974Z Removing HTTP extra header
+2026-11-21T02:48:10.8045484Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader
+2026-11-21T02:48:10.8078954Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader' && git config --local --unset-all 'http.https://pubcode.archuser.org/.extraheader' || :"
+2026-11-21T02:48:10.8374154Z Removing includeIf entries pointing to credentials config files
+2026-11-21T02:48:10.8379477Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T02:48:10.8409890Z includeif.gitdir:/workspace/firebadnofire/dronesmc/.git.path
+2026-11-21T02:48:10.8410182Z includeif.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path
+2026-11-21T02:48:10.8410396Z includeif.gitdir:/github/workspace/.git.path
+2026-11-21T02:48:10.8410578Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-21T02:48:10.8418816Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/workspace/firebadnofire/dronesmc/.git.path
+2026-11-21T02:48:10.8444383Z /tmp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config
+2026-11-21T02:48:10.8454687Z [command]/usr/bin/git config --local --unset includeif.gitdir:/workspace/firebadnofire/dronesmc/.git.path \/tmp\/git\-credentials\-a247d0b3\-e522\-47c2\-a026\-93d6d5848902\.config
+2026-11-21T02:48:10.8483232Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path
+2026-11-21T02:48:10.8505986Z /tmp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config
+2026-11-21T02:48:10.8511235Z [command]/usr/bin/git config --local --unset includeif.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path \/tmp\/git\-credentials\-a247d0b3\-e522\-47c2\-a026\-93d6d5848902\.config
+2026-11-21T02:48:10.8543055Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-21T02:48:10.8574414Z /github/runner_temp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config
+2026-11-21T02:48:10.8583102Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-a247d0b3\-e522\-47c2\-a026\-93d6d5848902\.config
+2026-11-21T02:48:10.8614085Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-21T02:48:10.8636496Z /github/runner_temp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config
+2026-11-21T02:48:10.8641156Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-a247d0b3\-e522\-47c2\-a026\-93d6d5848902\.config
+2026-11-21T02:48:10.8680916Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T02:48:10.9006103Z Removing credentials config '/tmp/git-credentials-a247d0b3-e522-47c2-a026-93d6d5848902.config'
+2026-11-21T02:48:10.9015357Z ##[endgroup]
+2026-11-21T02:48:10.9016272Z ::remove-matcher owner=checkout-git::
+2026-11-21T02:48:11.0868320Z test_bad_run_id_rejected_before_api (test_recover.RecoveryTests.test_bad_run_id_rejected_before_api) ... ok
+2026-11-21T02:48:11.0870340Z test_failed_smoke_run_rejected (test_recover.RecoveryTests.test_failed_smoke_run_rejected) ... ok
+2026-11-21T02:48:11.0871804Z test_original_tag_run_is_accepted (test_recover.RecoveryTests.test_original_tag_run_is_accepted) ... ok
+2026-11-21T02:48:11.0876681Z test_wrong_event_workflow_tag_commit_rejected (test_recover.RecoveryTests.test_wrong_event_workflow_tag_commit_rejected) ... ok
+2026-11-21T02:48:11.0896349Z test_zip_path_checks_and_original_bytes (test_recover.RecoveryTests.test_zip_path_checks_and_original_bytes) ... ok
+2026-11-21T02:48:11.0898488Z test_annotated_github_tag_resolves_to_expected_commit (test_release.PublisherTests.test_annotated_github_tag_resolves_to_expected_commit) ... ok
+2026-11-21T02:48:11.0910659Z test_bad_signature_fails_closed (test_release.PublisherTests.test_bad_signature_fails_closed) ... ok
+2026-11-21T02:48:11.0918076Z test_both_drafts_verified_before_first_finalize (test_release.PublisherTests.test_both_drafts_verified_before_first_finalize) ... ok
+2026-11-21T02:48:11.0935150Z test_changed_published_binary_is_rejected (test_release.PublisherTests.test_changed_published_binary_is_rejected) ... ok
+2026-11-21T02:48:11.0950548Z test_draft_upload_verify_then_normal_release (test_release.PublisherTests.test_draft_upload_verify_then_normal_release) ... ok
+2026-11-21T02:48:11.0952242Z test_forgejo_draft_uses_authenticated_uuid_route (test_release.PublisherTests.test_forgejo_draft_uses_authenticated_uuid_route) ... ok
+2026-11-21T02:48:11.0952949Z test_github_collision (test_release.PublisherTests.test_github_collision) ... ok
+2026-11-21T02:48:11.0966378Z test_github_upload_and_download_then_normal_release (test_release.PublisherTests.test_github_upload_and_download_then_normal_release) ... ok
+2026-11-21T02:48:11.0967640Z test_metadata_mismatch_fails (test_release.PublisherTests.test_metadata_mismatch_fails) ... ok
+2026-11-21T02:48:11.0969062Z test_missing_uuid_and_external_asset_fail_closed (test_release.PublisherTests.test_missing_uuid_and_external_asset_fail_closed) ... ok
+2026-11-21T02:48:11.0989697Z test_partial_failure_can_resume (test_release.PublisherTests.test_partial_failure_can_resume) ... ok
+2026-11-21T02:48:11.0992387Z test_publication_without_downloads_still_checks_inventory_and_finalizes (test_release.PublisherTests.test_publication_without_downloads_still_checks_inventory_and_finalizes) ... ok
+2026-11-21T02:48:11.0992665Z test_release_notes_are_version_derived (test_release.PublisherTests.test_release_notes_are_version_derived) ... ok
+2026-11-21T02:48:11.1056973Z test_release_uses_original_tag_case_on_both_platforms (test_release.PublisherTests.test_release_uses_original_tag_case_on_both_platforms) ... ok
+2026-11-21T02:48:11.1060856Z test_second_target_staging_failure_prevents_finalization (test_release.PublisherTests.test_second_target_staging_failure_prevents_finalization) ... Publication incomplete. One target may already be public. Rerun the same commit with the same signing key; verified existing assets will be retained. Never retarget tags or replace binaries.
+2026-11-21T02:48:11.1061431Z ok
+2026-11-21T02:48:11.1082859Z test_signature_variation_is_verified_not_overwritten (test_release.PublisherTests.test_signature_variation_is_verified_not_overwritten) ... ok
+2026-11-21T02:48:11.1083275Z test_tag_collision_never_retargets (test_release.PublisherTests.test_tag_collision_never_retargets) ... ok
+2026-11-21T02:48:11.1084686Z test_tag_event_guard (test_release.PublisherTests.test_tag_event_guard) ... ok
+2026-11-21T02:48:11.1085356Z test_unexpected_asset_fails (test_release.PublisherTests.test_unexpected_asset_fails) ... ok
+2026-11-21T02:48:11.1090536Z test_divergent_main_cannot_be_pushed (test_release.SyncTests.test_divergent_main_cannot_be_pushed) ... ok
+2026-11-21T02:48:11.1096252Z test_small_repository_with_other_branches_is_rejected (test_release.SyncTests.test_small_repository_with_other_branches_is_rejected) ... ok
+2026-11-21T02:48:11.1108849Z test_source_sync_uses_askpass_without_token_in_command (test_release.SyncTests.test_source_sync_uses_askpass_without_token_in_command) ... ok
+2026-11-21T02:48:11.1114193Z test_unrelated_repository_without_main_is_rejected (test_release.SyncTests.test_unrelated_repository_without_main_is_rejected) ... ok
+2026-11-21T02:48:11.1143663Z test_independent_success_phases (test_smoke.SmokeTests.test_independent_success_phases) ... ok
+2026-11-21T02:48:11.1166430Z test_loader_errors_fail (test_smoke.SmokeTests.test_loader_errors_fail) ... ok
+2026-11-21T02:48:11.1228790Z test_startup_timeout_cleans_up (test_smoke.SmokeTests.test_startup_timeout_cleans_up) ... ok
+2026-11-21T02:48:11.1252156Z test_unexpected_exit_fails (test_smoke.SmokeTests.test_unexpected_exit_fails) ... ok
+2026-11-21T02:48:11.1274559Z test_world_ready_without_loaded_mod_fails (test_smoke.SmokeTests.test_world_ready_without_loaded_mod_fails) ... ok
+2026-11-21T02:48:11.1274846Z 
+2026-11-21T02:48:11.1275004Z ----------------------------------------------------------------------
+2026-11-21T02:48:11.1275180Z Ran 33 tests in 0.041s
+2026-11-21T02:48:11.1275310Z 
+2026-11-21T02:48:11.1275424Z OK
+2026-11-21T02:48:11.1275884Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": true, "mod_loaded": true, "observation": true, "shutdown": true, "passed": true, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "ready_after_seconds": 10, "healthy_seconds": 20}
+2026-11-21T02:48:11.1276117Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": false, "mod_loaded": false, "observation": false, "shutdown": false, "passed": false, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "error": "Server logged a startup/runtime error"}
+2026-11-21T02:48:11.1276324Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": false, "mod_loaded": false, "observation": false, "shutdown": false, "passed": false, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "error": "Server startup or 10-second observation timed out"}
+2026-11-21T02:48:11.1276517Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": false, "mod_loaded": false, "observation": false, "shutdown": false, "passed": false, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "error": "Server terminated unexpectedly before shutdown"}
+2026-11-21T02:48:11.1276704Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": true, "mod_loaded": false, "observation": false, "shutdown": false, "passed": false, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "ready_after_seconds": 10, "error": "World ready but DronesMC loaded/initialized evidence absent"}
+2026-11-21T02:48:12.0616638Z Recovered original tested artifact: v0.0.1 a8e54bf58149ed916dfdf5f457ac82878fca5b7e 9a9d1c7bd8866145003608014075125c4fcbc838839c16837f1eb7e63a47182e
+2026-11-21T02:48:12.2037862Z {"version": "0.1.1-beta", "sha256": "9a9d1c7bd8866145003608014075125c4fcbc838839c16837f1eb7e63a47182e", "commit": "a8e54bf58149ed916dfdf5f457ac82878fca5b7e", "tests": 14}
+2026-11-21T02:48:12.2139465Z gpg: keybox '/tmp/tmp.HrcDcFcmOg/pubring.kbx' created
+2026-11-21T02:48:12.2165336Z gpg: /tmp/tmp.HrcDcFcmOg/trustdb.gpg: trustdb created
+2026-11-21T02:48:12.2170653Z gpg: key 94F31AF374E2EE3C: public key "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" imported
+2026-11-21T02:48:12.2230977Z gpg: To migrate 'secring.gpg', with each smartcard, run: gpg --card-status
+2026-11-21T02:48:12.2231306Z gpg: key 94F31AF374E2EE3C: secret key imported
+2026-11-21T02:48:12.2231498Z gpg: Total number processed: 1
+2026-11-21T02:48:12.2231668Z gpg:               imported: 1
+2026-11-21T02:48:12.2231815Z gpg:       secret keys read: 1
+2026-11-21T02:48:12.2231937Z gpg:   secret keys imported: 1
+2026-11-21T02:48:12.2323731Z dronesmc-0.1.1-beta.jar: OK
+2026-11-21T02:48:13.4510305Z gpg: Signature made Sat Nov 21 02:48:12 2026 UTC
+2026-11-21T02:48:13.4510734Z gpg:                using EDDSA key F66F1B747BC6EE547BF0ACE442B0D0D2CA34F814
+2026-11-21T02:48:13.4525916Z gpg: Good signature from "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" [unknown]
+2026-11-21T02:48:13.4536104Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:48:13.4536280Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:48:13.4536366Z Primary key fingerprint: 7D6E F134 D851 C8DA 0862  D974 94F3 1AF3 74E2 EE3C
+2026-11-21T02:48:13.4536439Z      Subkey fingerprint: F66F 1B74 7BC6 EE54 7BF0  ACE4 42B0 D0D2 CA34 F814
+2026-11-21T02:48:13.7071787Z gpg: Signature made Sat Nov 21 02:48:13 2026 UTC
+2026-11-21T02:48:13.7072198Z gpg:                using EDDSA key F66F1B747BC6EE547BF0ACE442B0D0D2CA34F814
+2026-11-21T02:48:13.7088752Z gpg: Good signature from "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" [unknown]
+2026-11-21T02:48:13.7098680Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:48:13.7099000Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:48:13.7099159Z Primary key fingerprint: 7D6E F134 D851 C8DA 0862  D974 94F3 1AF3 74E2 EE3C
+2026-11-21T02:48:13.7099305Z      Subkey fingerprint: F66F 1B74 7BC6 EE54 7BF0  ACE4 42B0 D0D2 CA34 F814
+2026-11-21T02:48:13.7103031Z Signing fingerprint: 7D6EF134D851C8DA0862D97494F31AF374E2EE3C
+2026-11-21T02:48:13.8321165Z gpg: keybox '/tmp/tmp.mTsxCevqm8/pubring.kbx' created
+2026-11-21T02:48:13.8348792Z gpg: /tmp/tmp.mTsxCevqm8/trustdb.gpg: trustdb created
+2026-11-21T02:48:13.8353689Z gpg: key 94F31AF374E2EE3C: public key "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" imported
+2026-11-21T02:48:13.8395316Z gpg: Total number processed: 1
+2026-11-21T02:48:13.8395562Z gpg:               imported: 1
+2026-11-21T02:48:14.1842968Z gpg: Signature made Sat Nov 21 02:48:12 2026 UTC
+2026-11-21T02:48:14.1843445Z gpg:                using EDDSA key F66F1B747BC6EE547BF0ACE442B0D0D2CA34F814
+2026-11-21T02:48:14.1856659Z gpg: Good signature from "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" [unknown]
+2026-11-21T02:48:14.1866721Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:48:14.1866905Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:48:14.1867075Z Primary key fingerprint: 7D6E F134 D851 C8DA 0862  D974 94F3 1AF3 74E2 EE3C
+2026-11-21T02:48:14.1867218Z      Subkey fingerprint: F66F 1B74 7BC6 EE54 7BF0  ACE4 42B0 D0D2 CA34 F814
+2026-11-21T02:48:14.1896591Z gpg: Signature made Sat Nov 21 02:48:13 2026 UTC
+2026-11-21T02:48:14.1896787Z gpg:                using EDDSA key F66F1B747BC6EE547BF0ACE442B0D0D2CA34F814
+2026-11-21T02:48:14.1911731Z gpg: Good signature from "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" [unknown]
+2026-11-21T02:48:14.1921455Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:48:14.1921687Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:48:14.1921844Z Primary key fingerprint: 7D6E F134 D851 C8DA 0862  D974 94F3 1AF3 74E2 EE3C
+2026-11-21T02:48:14.1921984Z      Subkey fingerprint: F66F 1B74 7BC6 EE54 7BF0  ACE4 42B0 D0D2 CA34 F814
+2026-11-21T02:48:14.1937189Z dronesmc-0.1.1-beta.jar: OK
+2026-11-21T02:48:14.8097646Z From https://github.com/firebadnofire/dronesmc
+2026-11-21T02:48:14.8097940Z  * branch            97704cd473ce36392b5fbf14dc06068782aad6cc -> FETCH_HEAD
+2026-11-21T02:48:15.1677508Z Everything up-to-date
+2026-11-21T02:48:15.8239946Z Remote download verification disabled by publication policy; checking metadata and asset inventory only.
+2026-11-21T02:48:26.7069707Z Both normal releases published; metadata and asset inventories verified: v0.0.1
+2026-11-21T02:48:26.8990704Z With the provided path, there will be 6 files uploaded
+2026-11-21T02:48:26.8992024Z Starting artifact upload
+2026-11-21T02:48:26.8992325Z For more detailed logs during the artifact upload process, enable step-debugging: https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging#enabling-step-debug-logging
+2026-11-21T02:48:26.8992641Z Artifact name is valid!
+2026-11-21T02:48:26.9898984Z Container for artifact "release-recovery-evidence" successfully created. Starting upload of file(s)
+2026-11-21T02:48:27.2014508Z Total size of all the files uploaded is 37813 bytes
+2026-11-21T02:48:27.2014924Z File upload process has finished. Finalizing the artifact upload
+2026-11-21T02:48:27.2931462Z Artifact has been finalized. All files have been successfully uploaded!
+2026-11-21T02:48:27.2931718Z 
+2026-11-21T02:48:27.2931909Z The raw size of all the files that were specified for upload is 41473 bytes
+2026-11-21T02:48:27.2932130Z The size of all the files that were uploaded is 37813 bytes. This takes into account any gzip compression used to reduce the upload size, time and storage
+2026-11-21T02:48:27.2932356Z 
+2026-11-21T02:48:27.2932543Z Note: The size of downloaded zips can differ significantly from the reported size. For more information see: https://github.com/actions/upload-artifact#zipped-artifact-downloads 
+2026-11-21T02:48:27.2932794Z 
+2026-11-21T02:48:27.2933313Z Artifact release-recovery-evidence has been successfully uploaded!
+2026-11-21T02:48:27.3264691Z ⭐ Run Post https://data.forgejo.org/actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-21T02:48:27.3310867Z   🐳  docker exec cmd=[node /var/run/act/actions/ab/9e4e9d2740e5ec5ecd8e404ad47c368949ce53bbb18d377163d38cff88f233/dist/index.js] user= workdir=
+2026-11-21T02:48:27.4849721Z [command]/usr/bin/git version
+2026-11-21T02:48:27.4904566Z git version 2.39.5
+2026-11-21T02:48:27.4928043Z   ⚙  ***
+2026-11-21T02:48:27.4954145Z Temporarily overriding HOME='/tmp/21959707-3d87-4abf-857a-1ba923a2c014' before making global git config changes
+2026-11-21T02:48:27.4954451Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-21T02:48:27.4959324Z [command]/usr/bin/git config --global --add safe.directory /workspace/firebadnofire/dronesmc
+2026-11-21T02:48:27.4994251Z Removing SSH command configuration
+2026-11-21T02:48:27.4999360Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T02:48:27.5040313Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T02:48:27.5414693Z Removing HTTP extra header
+2026-11-21T02:48:27.5419490Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader
+2026-11-21T02:48:27.5472118Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader' && git config --local --unset-all 'http.https://pubcode.archuser.org/.extraheader' || :"
+2026-11-21T02:48:27.5867034Z Removing includeIf entries pointing to credentials config files
+2026-11-21T02:48:27.5875242Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T02:48:27.5914684Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T02:48:27.6446159Z   ✅  Success - Post https://data.forgejo.org/actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-21T02:48:27.6706428Z 🏁  Job succeeded

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.dronesmc.FlightMathTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-21T02:40:16" hostname="docker" time="0.001">
+  <properties/>
+  <testcase name="defaultSpeedsMatchCreativeFlightScale" classname="dev.dronesmc.FlightMathTest" time="0.0"/>
+  <testcase name="releaseHoversWithoutResidualVelocity" classname="dev.dronesmc.FlightMathTest" time="0.0"/>
+  <testcase name="rejectsMalformedNetworkControls" classname="dev.dronesmc.FlightMathTest" time="0.0"/>
+  <testcase name="strafeMatchesVanillaLeftAndRightAtEveryHeading" classname="dev.dronesmc.FlightMathTest" time="0.001"/>
+  <testcase name="diagonalAndVerticalSpeedAreBounded" classname="dev.dronesmc.FlightMathTest" time="0.0"/>
+  <testcase name="movementIsRelativeToYawNotPitch" classname="dev.dronesmc.FlightMathTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,30 @@
+Downloading https://services.gradle.org/distributions/gradle-4.9-bin.zip
+........................................................................
+Unzipping /root/.gradle/wrapper/dists/gradle-4.9-bin/e9cinqnqvph59rr7g70qubb4t/gradle-4.9-bin.zip to /root/.gradle/wrapper/dists/gradle-4.9-bin/e9cinqnqvph59rr7g70qubb4t
+Set executable permissions for: /root/.gradle/wrapper/dists/gradle-4.9-bin/e9cinqnqvph59rr7g70qubb4t/gradle-4.9/bin/gradle
+
+Welcome to Gradle 4.9!
+
+Here are the highlights of this release:
+ - Experimental APIs for creating and configuring tasks lazily
+ - Pass arguments to JavaExec via CLI
+ - Auxiliary publication dependency support for multi-project builds
+ - Improved dependency insight report
+
+For more details see https://docs.gradle.org/4.9/release-notes.html
+
+
+------------------------------------------------------------
+Gradle 4.9
+------------------------------------------------------------
+
+Build time:   2018-07-16 08:14:03 UTC
+Revision:     efcf8c1cf533b03c70f394f270f46a174c738efc
+
+Kotlin DSL:   0.18.4
+Kotlin:       1.2.41
+Groovy:       2.4.12
+Ant:          Apache Ant(TM) version 1.9.11 compiled on March 23 2018
+JVM:          1.8.0_472 (Temurin 25.472-b08)
+OS:           Linux 7.3.4-1-default amd64
+
