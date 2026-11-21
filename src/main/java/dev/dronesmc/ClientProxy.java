@@ -8,6 +8,8 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBat;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.settings.GameSettings;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.Render;
@@ -35,6 +37,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.input.Keyboard;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 
 public final class ClientProxy extends CommonProxy {
     private final KeyBinding exit = new KeyBinding("key.dronesmc.exit", Keyboard.KEY_R, "key.categories.dronesmc");
@@ -42,6 +45,7 @@ public final class ClientProxy extends CommonProxy {
     private float bodyYaw, bodyPitch;
     private float cameraYaw, cameraPitch;
     private boolean landRequested;
+    private boolean releaseInteractions;
     private int exitingEntity = -1;
     private int selectedEntity = -1, sequence;
     private final Deque<ControlPacket> pendingMoves = new ArrayDeque<>();
@@ -70,7 +74,26 @@ public final class ClientProxy extends CommonProxy {
         }
     }
     @SubscribeEvent public void mouse(MouseEvent event) {
-        if (active != null && event.getButton() >= 0) event.setCanceled(true);
+        if ((active != null || releaseInteractions) && event.getButton() >= 0) {
+            clearInteractions(Minecraft.getMinecraft());
+            event.setCanceled(true);
+        }
+    }
+    private void clearInteractions(Minecraft mc) {
+        clearInteractions(mc.gameSettings.keyBindAttack, mc.gameSettings.keyBindUseItem, mc.gameSettings.keyBindPickBlock);
+    }
+    static void clearInteractions(KeyBinding... bindings) {
+        for (KeyBinding binding : bindings) {
+            KeyBinding.setKeyBindState(binding.getKeyCode(), false);
+            while (binding.isPressed()) { }
+        }
+    }
+    @SubscribeEvent(priority = EventPriority.HIGHEST) public void overlayCamera(RenderWorldLastEvent event) {
+        Minecraft mc = Minecraft.getMinecraft();
+        if (active != null && mc.getRenderViewEntity() == active) {
+            // Overlay mods read these direction vectors instead of CameraSetup angles.
+            ActiveRenderInfo.updateRenderInfo(active, mc.gameSettings.thirdPersonView == 2);
+        }
     }
     @SubscribeEvent public void hand(RenderHandEvent event) { if (active != null) event.setCanceled(true); }
     @SubscribeEvent public void body(RenderWorldLastEvent event) {
@@ -124,8 +147,15 @@ public final class ClientProxy extends CommonProxy {
         event.getMovementInput().jump = event.getMovementInput().sneak = false;
     }
     @SubscribeEvent public void tick(TickEvent.ClientTickEvent event) {
-        if (event.phase != TickEvent.Phase.END) return;
         Minecraft mc = Minecraft.getMinecraft();
+        if (event.phase == TickEvent.Phase.START) {
+            if (active != null || releaseInteractions) clearInteractions(mc);
+            if (active == null && releaseInteractions
+                    && !GameSettings.isKeyDown(mc.gameSettings.keyBindAttack)
+                    && !GameSettings.isKeyDown(mc.gameSettings.keyBindUseItem)
+                    && !GameSettings.isKeyDown(mc.gameSettings.keyBindPickBlock)) releaseInteractions = false;
+            return;
+        }
         if (mc.world == null || mc.player == null) { restore(mc); exitingEntity = selectedEntity = -1; return; }
         if (exitingEntity != -1) {
             Entity exiting = mc.world.getEntityByID(exitingEntity);
@@ -136,6 +166,7 @@ public final class ClientProxy extends CommonProxy {
                 if (entity instanceof DroneEntity && ((DroneEntity) entity).pilotId() == mc.player.getEntityId()) {
                     if (entity.getEntityId() == exitingEntity) continue;
                     active = (DroneEntity) entity;
+                    releaseInteractions = true; clearInteractions(mc);
                     selectedEntity = active.getEntityId(); sequence = 0; pendingMoves.clear();
                     active.setClientControlled(true);
                     bodyYaw = mc.player.rotationYaw; bodyPitch = mc.player.rotationPitch;
@@ -224,6 +255,7 @@ public final class ClientProxy extends CommonProxy {
     }
     private float axis(KeyBinding positive, KeyBinding negative) { return (positive.isKeyDown() ? 1 : 0) - (negative.isKeyDown() ? 1 : 0); }
     private void restore(Minecraft mc) {
+        if (active != null) { releaseInteractions = true; clearInteractions(mc); }
         if (active != null) active.setClientControlled(false);
         if (active != null && mc.player != null) mc.setRenderViewEntity(mc.player);
         active = null; landRequested = false; pendingMoves.clear();
