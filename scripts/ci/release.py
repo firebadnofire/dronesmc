@@ -153,7 +153,15 @@ class Target:
     def asset_bytes(self, asset):
         if self.api.github:
             return self.api.repo('GET', '/releases/assets/' + str(asset['id']), raw=True)
-        return self.api.request('GET', asset['browser_download_url'], raw=True)
+        # Release browser URLs cannot resolve draft attachments. The UUID route
+        # supports API authentication and enforces draft-release write access.
+        require(asset.get('type', 'attachment') == 'attachment', 'External release assets are not supported')
+        try:
+            attachment = str(uuid.UUID(asset['uuid']))
+        except (KeyError, ValueError, TypeError, AttributeError):
+            raise RuntimeError('Forgejo asset is missing a valid attachment UUID: ' + asset['name']) from None
+        origin = self.api.base.rsplit('/api/v1', 1)[0]
+        return self.api.request('GET', origin + '/attachments/' + attachment, raw=True)
 
     def check_assets(self, release):
         assets = self.api.repo('GET', f"/releases/{release['id']}/assets?per_page=100&limit=100")
@@ -259,12 +267,26 @@ def publish_targets(targets, files):
 
 
 def main():
-    tag = release_tag(os.environ['GITHUB_EVENT_NAME'], os.environ['GITHUB_REF'])
+    recovery_tag = os.environ.get('RECOVERY_RELEASE_TAG')
+    if recovery_tag:
+        require(os.environ['GITHUB_EVENT_NAME'] in ('workflow_dispatch', 'push') and
+                os.environ['GITHUB_REF'] == 'refs/heads/main', 'Recovery requires trusted main workflow code')
+        tag = release_tag('push', 'refs/tags/' + recovery_tag)
+    else:
+        tag = release_tag(os.environ['GITHUB_EVENT_NAME'], os.environ['GITHUB_REF'])
     record, jar = verify('ci-dist')
     checked_out = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
     tagged = subprocess.check_output(['git', 'rev-parse', 'refs/tags/' + tag + '^{commit}'], text=True).strip()
-    require(record['commit'] == checked_out == tagged, 'Release tag/checkout differs from tested build')
-    subprocess.run(['git', 'merge-base', '--is-ancestor', checked_out, 'refs/remotes/origin/main'], check=True)
+    require(record['commit'] == tagged, 'Release tag differs from tested build')
+    if recovery_tag:
+        from recover import validate_source_run
+        require(checked_out == subprocess.check_output(
+            ['git', 'rev-parse', 'refs/remotes/origin/main'], text=True).strip(), 'Recovery checkout must be current main')
+        validate_source_run(API('https://pubcode.archuser.org/api/v1', os.environ['RELEASE_TOKEN']),
+                            os.environ['RECOVERY_RUN_ID'], tag, record['commit'])
+    else:
+        require(checked_out == tagged, 'Release checkout differs from tested build')
+    subprocess.run(['git', 'merge-base', '--is-ancestor', tagged, 'refs/remotes/origin/main'], check=True)
     record['release_tag'] = tag
     require(os.environ['GITHUB_REPOSITORY'].lower() == REPOSITORY, 'Unexpected repository')
     result = json.loads(pathlib.Path('smoke-result/result.json').read_text())

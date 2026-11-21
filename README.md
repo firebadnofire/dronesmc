@@ -121,3 +121,5 @@ git tag v0.0.1
 git push origin v0.0.1
 # Alternatively use V0.0.1 with uppercase V.
 ```
+
+Release recovery: `.forgejo/workflows/recover-release.yml` is a separate publishing workflow. Dispatch it on `main` with the existing release tag and the original tag run API ID (for example `v0.0.1`, `918`). This deliberately finishes publication; the ordinary main workflow manual dispatch remains validation-only. Recovery downloads the original distributable and Minecraft evidence, validates the original successful build/smoke jobs and commit, and never recompiles the mod or moves its tag. Forgejo draft assets are verified through the authenticated `/attachments/<uuid>` route, since browser release download URLs cannot resolve draft assets. Existing verified signatures are retained; newly signed local copies may differ while remaining authentic. A missing/expired artifact, failed original check, commit/hash mismatch or invalid signature stops recovery.

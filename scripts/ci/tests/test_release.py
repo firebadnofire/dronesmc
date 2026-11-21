@@ -184,6 +184,27 @@ class PublisherTests(unittest.TestCase):
         target.tag_check()
         self.assertEqual(api.repo.call_args.args, ('GET', '/git/tags/' + 'b' * 40))
 
+    def test_forgejo_draft_uses_authenticated_uuid_route(self):
+        from unittest.mock import Mock
+        api = Mock(github=False, base='https://pubcode.archuser.org/api/v1')
+        api.request.return_value = b'original draft binary'
+        asset = dict(id=42, name='dronesmc.jar', uuid='12345678-1234-1234-1234-123456789abc',
+                     browser_download_url='https://pubcode.archuser.org/hidden/draft/url')
+        target = Target(api, self.record, self.files)
+        self.assertEqual(target.asset_bytes(asset), b'original draft binary')
+        api.request.assert_called_once_with('GET',
+            'https://pubcode.archuser.org/attachments/12345678-1234-1234-1234-123456789abc', raw=True)
+
+    def test_missing_uuid_and_external_asset_fail_closed(self):
+        from unittest.mock import Mock
+        api = Mock(github=False)
+        target = Target(api, self.record, self.files)
+        for asset in (dict(name='bad.jar'), dict(name='bad.jar', uuid='../wrong'),
+                      dict(name='external.jar', type='external')):
+            with self.subTest(asset=asset), self.assertRaises(RuntimeError):
+                target.asset_bytes(asset)
+        api.request.assert_not_called()
+
     def test_second_target_staging_failure_prevents_finalization(self):
         from unittest.mock import Mock
         first, second = Mock(), Mock()
