@@ -3,6 +3,7 @@ import io
 import os
 import pathlib
 import re
+import subprocess
 import zipfile
 
 from artifact import require, verify
@@ -43,6 +44,10 @@ def main():
     run_id = os.environ['RECOVERY_RUN_ID']
     tag = release_tag('push', 'refs/tags/' + os.environ['RECOVERY_RELEASE_TAG'])
     run = validate_source_run(api, run_id, tag)
+    # Main checkouts may omit tags even with full branch history. Fetch only the
+    # requested immutable tag; do not force-update an existing local tag.
+    subprocess.run(['git', 'fetch', '--no-tags', 'origin',
+                    'refs/tags/' + tag + ':refs/tags/' + tag], check=True)
     artifacts = api.repo('GET', '/actions/runs/' + run_id + '/artifacts')
     for name, directory in (('distributable', 'ci-dist'), ('minecraft-evidence', 'smoke-result')):
         matches = [a for a in artifacts if a['name'] == name and not a['expired']]
