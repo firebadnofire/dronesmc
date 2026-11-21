@@ -2,6 +2,16 @@
 
 A craftable physical drone camera for Minecraft 1.12.2, built against Forge 14.23.5.2859, using Java 8. Install the same JAR on the client and server. No additional mods are required.
 
+## Screenshots
+
+| **Drones in flight** | **Drone camera view** |
+| :---: | :---: |
+| <img src="readme-assets/drones-flight.png" alt="Two named drones flying over an ocean" width="420"> | <img src="readme-assets/drone-shot.png" alt="A snowy house, farm, and player seen from above" width="420"> |
+| **Drone item** | **Deployed drone** |
+| <img src="readme-assets/my-drone.png" alt="Drone item in the player's hotbar" width="420"> | <img src="readme-assets/my-drone-deployed.png" alt="My Drone hovering above a sandy shore" width="420"> |
+
+The current beta uses the vanilla compass icon and bat model/texture as placeholders.
+
 ## Gameplay
 
 Right-click a block with the Drone item to deploy it. Right-click an unoccupied drone to pilot it. Drones are independent world entities, like boats or minecarts: there is no per-player deployment limit or permanent owner. Any player can pilot an unoccupied drone; each player controls one at a time.
