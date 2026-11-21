@@ -1,7 +1,6 @@
 name: DronesMC build, smoke test and signed releases
 on:
   push:
-    branches: [main]
     tags: ['v*', 'V*']
   pull_request:
     branches: [main]
