@@ -1,0 +1,246 @@
+2026-11-21T02:21:03.3377681Z Runner c3d6a19b-ccd0-43ce-94c4-98086e60a879 (version:v12.13.2) received task 2942 of job release, triggered by event: push
+2026-11-21T02:21:03.3408052Z workflow prepared
+2026-11-21T02:21:03.3408710Z 'runs-on' key not defined in DronesMC build, smoke test and signed releases/build
+2026-11-21T02:21:03.3408795Z 'runs-on' key not defined in DronesMC build, smoke test and signed releases/minecraft-smoke
+2026-11-21T02:21:03.3679912Z 🚀  Start image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496
+2026-11-21T02:21:03.3841945Z   🐳  docker create image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496 platform=linux/amd64 entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+2026-11-21T02:21:03.5679754Z   🐳  docker run image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496 platform=linux/amd64 entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+2026-11-21T02:21:03.8456529Z   ☁️  git fetch 'https://data.forgejo.org/actions/checkout' skipped; ref=3d3c42e5aac5ba805825da76410c181273ba90b1 cached
+2026-11-21T02:21:03.8914311Z   ☁️  git fetch 'https://data.forgejo.org/actions/download-artifact' skipped; ref=9bc31d5ccc31df68ecc42ccf4149144866c47d8a cached
+2026-11-21T02:21:03.9344986Z   ☁️  git fetch 'https://data.forgejo.org/actions/download-artifact' skipped; ref=9bc31d5ccc31df68ecc42ccf4149144866c47d8a cached
+2026-11-21T02:21:03.9701106Z ⭐ Run Main set -eu\napt-get update\napt-get install --yes --no-install-recommends git python3 gnupg ca-certificates
+2026-11-21T02:21:03.9764561Z   🐳  docker exec cmd=[sh /var/run/act/ba5ee2540d8e4e18.sh] user= workdir=
+2026-11-21T02:21:04.0411966Z   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0.sh] user= workdir=
+2026-11-21T02:21:04.1712681Z Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+2026-11-21T02:21:04.2567498Z Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+2026-11-21T02:21:04.2868902Z Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+2026-11-21T02:21:04.3581658Z Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+2026-11-21T02:21:04.8254893Z Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+2026-11-21T02:21:04.8261366Z Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [378 kB]
+2026-11-21T02:21:05.4146682Z Fetched 9417 kB in 1s (7298 kB/s)
+2026-11-21T02:21:05.7184751Z Reading package lists...
+2026-11-21T02:21:06.0319338Z Reading package lists...
+2026-11-21T02:21:06.1299218Z Building dependency tree...
+2026-11-21T02:21:06.1301083Z Reading state information...
+2026-11-21T02:21:06.2307052Z git is already the newest version (1:2.39.5-0+deb12u3).
+2026-11-21T02:21:06.2307500Z python3 is already the newest version (3.11.2-1+b1).
+2026-11-21T02:21:06.2307694Z python3 set to manually installed.
+2026-11-21T02:21:06.2307884Z gnupg is already the newest version (2.2.40-1.1+deb12u2).
+2026-11-21T02:21:06.2308033Z ca-certificates is already the newest version (20250419~deb12u2).
+2026-11-21T02:21:06.2308188Z 0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+2026-11-21T02:21:06.3884203Z ::add-matcher::/run/act/actions/85/37dd24d31913e69597b7b46016ad45c54de61991e6b6000d936ad54e2bc5d7/dist/problem-matcher.json
+2026-11-21T02:21:06.3886140Z Syncing repository: firebadnofire/dronesmc
+2026-11-21T02:21:06.3887902Z ##[group]Getting Git version info
+2026-11-21T02:21:06.3888064Z Working directory is '/workspace/firebadnofire/dronesmc'
+2026-11-21T02:21:06.3913087Z [command]/usr/bin/git version
+2026-11-21T02:21:06.3957423Z git version 2.39.5
+2026-11-21T02:21:06.3972524Z ##[endgroup]
+2026-11-21T02:21:06.3980463Z Temporarily overriding HOME='/tmp/e9765691-071a-49dc-9043-4a4d65384441' before making global git config changes
+2026-11-21T02:21:06.3980627Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-21T02:21:06.3983053Z [command]/usr/bin/git config --global --add safe.directory /workspace/firebadnofire/dronesmc
+2026-11-21T02:21:06.4015752Z Deleting the contents of '/workspace/firebadnofire/dronesmc'
+2026-11-21T02:21:06.4018970Z ##[group]Determining repository object format
+2026-11-21T02:21:06.4019832Z ##[endgroup]
+2026-11-21T02:21:06.4020018Z ##[group]Initializing the repository
+2026-11-21T02:21:06.4022550Z [command]/usr/bin/git init /workspace/firebadnofire/dronesmc
+2026-11-21T02:21:06.4055449Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-21T02:21:06.4055858Z hint: is subject to change. To configure the initial branch name to use in all
+2026-11-21T02:21:06.4056033Z hint: of your new repositories, which will suppress this warning, call:
+2026-11-21T02:21:06.4056179Z hint: 
+2026-11-21T02:21:06.4056308Z hint: 	git config --global init.defaultBranch <name>
+2026-11-21T02:21:06.4056443Z hint: 
+2026-11-21T02:21:06.4056577Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-21T02:21:06.4056720Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-21T02:21:06.4057088Z hint: 
+2026-11-21T02:21:06.4057225Z hint: 	git branch -m <name>
+2026-11-21T02:21:06.4061192Z Initialized empty Git repository in /workspace/firebadnofire/dronesmc/.git/
+2026-11-21T02:21:06.4071025Z [command]/usr/bin/git remote add origin https://pubcode.archuser.org/firebadnofire/dronesmc
+2026-11-21T02:21:06.4099397Z ##[endgroup]
+2026-11-21T02:21:06.4100055Z ##[group]Disabling automatic garbage collection
+2026-11-21T02:21:06.4104888Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-21T02:21:06.4143781Z ##[endgroup]
+2026-11-21T02:21:06.4144515Z ##[group]Setting up auth
+2026-11-21T02:21:06.4144935Z Removing SSH command configuration
+2026-11-21T02:21:06.4149348Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T02:21:06.4173519Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T02:21:06.4485573Z Removing HTTP extra header
+2026-11-21T02:21:06.4489129Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader
+2026-11-21T02:21:06.4518680Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader' && git config --local --unset-all 'http.https://pubcode.archuser.org/.extraheader' || :"
+2026-11-21T02:21:06.4814311Z Removing includeIf entries pointing to credentials config files
+2026-11-21T02:21:06.4819894Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T02:21:06.4850763Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T02:21:06.5126818Z [command]/usr/bin/git config --file /tmp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config http.https://pubcode.archuser.org/.extraheader AUTHORIZATION: basic ***
+2026-11-21T02:21:06.5167368Z [command]/usr/bin/git config --local includeIf.gitdir:/workspace/firebadnofire/dronesmc/.git.path /tmp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config
+2026-11-21T02:21:06.5196916Z [command]/usr/bin/git config --local includeIf.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path /tmp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config
+2026-11-21T02:21:06.5220121Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config
+2026-11-21T02:21:06.5249651Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config
+2026-11-21T02:21:06.5275020Z ##[endgroup]
+2026-11-21T02:21:06.5275397Z ##[group]Fetching the repository
+2026-11-21T02:21:06.5279840Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-11-21T02:21:07.3599123Z From https://pubcode.archuser.org/firebadnofire/dronesmc
+2026-11-21T02:21:07.3599613Z  * [new branch]      codex/ci-config-preflight -> origin/codex/ci-config-preflight
+2026-11-21T02:21:07.3600131Z  * [new branch]      codex/ci-preflight -> origin/codex/ci-preflight
+2026-11-21T02:21:07.3600316Z  * [new branch]      main               -> origin/main
+2026-11-21T02:21:07.3600525Z  * [new tag]         v0.0.1             -> v0.0.1
+2026-11-21T02:21:07.3622947Z [command]/usr/bin/git tag --list v0.0.1
+2026-11-21T02:21:07.3646639Z v0.0.1
+2026-11-21T02:21:07.3657251Z [command]/usr/bin/git rev-parse refs/tags/v0.0.1^{commit}
+2026-11-21T02:21:07.3684202Z abbaad5b6f83828dafc77e0b317f0f10733b964c
+2026-11-21T02:21:07.3687643Z ##[endgroup]
+2026-11-21T02:21:07.3688026Z ##[group]Determining the checkout info
+2026-11-21T02:21:07.3688403Z ##[endgroup]
+2026-11-21T02:21:07.3690257Z [command]/usr/bin/git sparse-checkout disable
+2026-11-21T02:21:07.3718754Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-21T02:21:07.3745876Z ##[group]Checking out the ref
+2026-11-21T02:21:07.3748511Z [command]/usr/bin/git checkout --progress --force refs/tags/v0.0.1
+2026-11-21T02:21:07.3861470Z Note: switching to 'refs/tags/v0.0.1'.
+2026-11-21T02:21:07.3861693Z 
+2026-11-21T02:21:07.3861822Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-21T02:21:07.3861991Z changes and commit them, and you can discard any commits you make in this
+2026-11-21T02:21:07.3862133Z state without impacting any branches by switching back to a branch.
+2026-11-21T02:21:07.3862268Z 
+2026-11-21T02:21:07.3862391Z If you want to create a new branch to retain commits you create, you may
+2026-11-21T02:21:07.3862528Z do so (now or later) by using -c with the switch command. Example:
+2026-11-21T02:21:07.3862670Z 
+2026-11-21T02:21:07.3862798Z   git switch -c <new-branch-name>
+2026-11-21T02:21:07.3862924Z 
+2026-11-21T02:21:07.3863047Z Or undo this operation with:
+2026-11-21T02:21:07.3863170Z 
+2026-11-21T02:21:07.3863289Z   git switch -
+2026-11-21T02:21:07.3863407Z 
+2026-11-21T02:21:07.3863525Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-21T02:21:07.3863658Z 
+2026-11-21T02:21:07.3863781Z HEAD is now at abbaad5 Add DronesMC project and signed releases triggered by v and V tags
+2026-11-21T02:21:07.3866807Z ##[endgroup]
+2026-11-21T02:21:07.3902686Z [command]/usr/bin/git log -1 --format=%H
+2026-11-21T02:21:07.3939246Z abbaad5b6f83828dafc77e0b317f0f10733b964c
+2026-11-21T02:21:07.3945013Z ##[group]Removing auth
+2026-11-21T02:21:07.3945092Z Removing SSH command configuration
+2026-11-21T02:21:07.3947425Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T02:21:07.3974247Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T02:21:07.4273645Z Removing HTTP extra header
+2026-11-21T02:21:07.4277130Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader
+2026-11-21T02:21:07.4317697Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader' && git config --local --unset-all 'http.https://pubcode.archuser.org/.extraheader' || :"
+2026-11-21T02:21:07.4614019Z Removing includeIf entries pointing to credentials config files
+2026-11-21T02:21:07.4615698Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T02:21:07.4642067Z includeif.gitdir:/workspace/firebadnofire/dronesmc/.git.path
+2026-11-21T02:21:07.4642201Z includeif.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path
+2026-11-21T02:21:07.4642291Z includeif.gitdir:/github/workspace/.git.path
+2026-11-21T02:21:07.4642415Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-21T02:21:07.4648193Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/workspace/firebadnofire/dronesmc/.git.path
+2026-11-21T02:21:07.4671541Z /tmp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config
+2026-11-21T02:21:07.4682569Z [command]/usr/bin/git config --local --unset includeif.gitdir:/workspace/firebadnofire/dronesmc/.git.path \/tmp\/git\-credentials\-ee779023\-7dbb\-49db\-82b9\-9ea71f1674be\.config
+2026-11-21T02:21:07.4720693Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path
+2026-11-21T02:21:07.4748196Z /tmp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config
+2026-11-21T02:21:07.4753332Z [command]/usr/bin/git config --local --unset includeif.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path \/tmp\/git\-credentials\-ee779023\-7dbb\-49db\-82b9\-9ea71f1674be\.config
+2026-11-21T02:21:07.4783184Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-21T02:21:07.4806960Z /github/runner_temp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config
+2026-11-21T02:21:07.4811146Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-ee779023\-7dbb\-49db\-82b9\-9ea71f1674be\.config
+2026-11-21T02:21:07.4850189Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-21T02:21:07.4869289Z /github/runner_temp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config
+2026-11-21T02:21:07.4873876Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-ee779023\-7dbb\-49db\-82b9\-9ea71f1674be\.config
+2026-11-21T02:21:07.4909689Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T02:21:07.5221358Z Removing credentials config '/tmp/git-credentials-ee779023-7dbb-49db-82b9-9ea71f1674be.config'
+2026-11-21T02:21:07.5228692Z ##[endgroup]
+2026-11-21T02:21:07.5229905Z ::remove-matcher owner=checkout-git::
+2026-11-21T02:21:07.6479118Z Starting download for distributable
+2026-11-21T02:21:07.7686257Z Directory structure has been setup for the artifact
+2026-11-21T02:21:07.7687277Z Total number of files that will be downloaded: 3
+2026-11-21T02:21:07.8656720Z Artifact distributable was downloaded to /workspace/firebadnofire/dronesmc/ci-dist
+2026-11-21T02:21:07.8660477Z Artifact download has finished successfully
+2026-11-21T02:21:07.9866127Z Starting download for minecraft-evidence
+2026-11-21T02:21:08.1713331Z Directory structure has been setup for the artifact
+2026-11-21T02:21:08.1714148Z Total number of files that will be downloaded: 5
+2026-11-21T02:21:08.3537406Z Artifact minecraft-evidence was downloaded to /workspace/firebadnofire/dronesmc/smoke-result
+2026-11-21T02:21:08.3541669Z Artifact download has finished successfully
+2026-11-21T02:21:08.5046500Z {"version": "0.1.1-beta", "sha256": "f3114f496d7d635a7ebdbdd5de442eb395c12a3a90dcaa846af806cb531ec362", "commit": "abbaad5b6f83828dafc77e0b317f0f10733b964c", "tests": 14}
+2026-11-21T02:21:08.5149033Z gpg: keybox '/tmp/tmp.AnOTFGA6sd/pubring.kbx' created
+2026-11-21T02:21:08.5174710Z gpg: /tmp/tmp.AnOTFGA6sd/trustdb.gpg: trustdb created
+2026-11-21T02:21:08.5179933Z gpg: key 94F31AF374E2EE3C: public key "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" imported
+2026-11-21T02:21:08.5231810Z gpg: To migrate 'secring.gpg', with each smartcard, run: gpg --card-status
+2026-11-21T02:21:08.5232063Z gpg: key 94F31AF374E2EE3C: secret key imported
+2026-11-21T02:21:08.5232215Z gpg: Total number processed: 1
+2026-11-21T02:21:08.5232366Z gpg:               imported: 1
+2026-11-21T02:21:08.5232500Z gpg:       secret keys read: 1
+2026-11-21T02:21:08.5232626Z gpg:   secret keys imported: 1
+2026-11-21T02:21:08.5330670Z dronesmc-0.1.1-beta.jar: OK
+2026-11-21T02:21:09.7622349Z gpg: Signature made Sat Nov 21 02:21:08 2026 UTC
+2026-11-21T02:21:09.7622801Z gpg:                using EDDSA key F66F1B747BC6EE547BF0ACE442B0D0D2CA34F814
+2026-11-21T02:21:09.7636706Z gpg: Good signature from "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" [unknown]
+2026-11-21T02:21:09.7647266Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:21:09.7647549Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:21:09.7647713Z Primary key fingerprint: 7D6E F134 D851 C8DA 0862  D974 94F3 1AF3 74E2 EE3C
+2026-11-21T02:21:09.7647858Z      Subkey fingerprint: F66F 1B74 7BC6 EE54 7BF0  ACE4 42B0 D0D2 CA34 F814
+2026-11-21T02:21:10.0042653Z gpg: Signature made Sat Nov 21 02:21:09 2026 UTC
+2026-11-21T02:21:10.0043075Z gpg:                using EDDSA key F66F1B747BC6EE547BF0ACE442B0D0D2CA34F814
+2026-11-21T02:21:10.0057049Z gpg: Good signature from "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" [unknown]
+2026-11-21T02:21:10.0068136Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:21:10.0068329Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:21:10.0068486Z Primary key fingerprint: 7D6E F134 D851 C8DA 0862  D974 94F3 1AF3 74E2 EE3C
+2026-11-21T02:21:10.0068629Z      Subkey fingerprint: F66F 1B74 7BC6 EE54 7BF0  ACE4 42B0 D0D2 CA34 F814
+2026-11-21T02:21:10.0075131Z Signing fingerprint: 7D6EF134D851C8DA0862D97494F31AF374E2EE3C
+2026-11-21T02:21:10.1271193Z gpg: keybox '/tmp/tmp.MlKfLkPg2u/pubring.kbx' created
+2026-11-21T02:21:10.1297351Z gpg: /tmp/tmp.MlKfLkPg2u/trustdb.gpg: trustdb created
+2026-11-21T02:21:10.1302405Z gpg: key 94F31AF374E2EE3C: public key "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" imported
+2026-11-21T02:21:10.1340810Z gpg: Total number processed: 1
+2026-11-21T02:21:10.1341223Z gpg:               imported: 1
+2026-11-21T02:21:10.1827342Z gpg: Signature made Sat Nov 21 02:21:08 2026 UTC
+2026-11-21T02:21:10.1827619Z gpg:                using EDDSA key F66F1B747BC6EE547BF0ACE442B0D0D2CA34F814
+2026-11-21T02:21:10.1842369Z gpg: Good signature from "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" [unknown]
+2026-11-21T02:21:10.1851846Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:21:10.1852047Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:21:10.1852209Z Primary key fingerprint: 7D6E F134 D851 C8DA 0862  D974 94F3 1AF3 74E2 EE3C
+2026-11-21T02:21:10.1852370Z      Subkey fingerprint: F66F 1B74 7BC6 EE54 7BF0  ACE4 42B0 D0D2 CA34 F814
+2026-11-21T02:21:10.1878954Z gpg: Signature made Sat Nov 21 02:21:09 2026 UTC
+2026-11-21T02:21:10.1879273Z gpg:                using EDDSA key F66F1B747BC6EE547BF0ACE442B0D0D2CA34F814
+2026-11-21T02:21:10.1906362Z gpg: Good signature from "William Jones (Yubikey generated GPG key) <william.jones@archuser.org>" [unknown]
+2026-11-21T02:21:10.1916199Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:21:10.1916416Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:21:10.1916580Z Primary key fingerprint: 7D6E F134 D851 C8DA 0862  D974 94F3 1AF3 74E2 EE3C
+2026-11-21T02:21:10.1916775Z      Subkey fingerprint: F66F 1B74 7BC6 EE54 7BF0  ACE4 42B0 D0D2 CA34 F814
+2026-11-21T02:21:10.1934133Z dronesmc-0.1.1-beta.jar: OK
+2026-11-21T02:21:10.8085752Z From https://github.com/firebadnofire/dronesmc
+2026-11-21T02:21:10.8086168Z  * branch            abbaad5b6f83828dafc77e0b317f0f10733b964c -> FETCH_HEAD
+2026-11-21T02:21:11.1800541Z Everything up-to-date
+2026-11-21T02:21:14.2622257Z Publication incomplete. One target may already be public. Rerun the same commit with the same signing key; verified existing assets will be retained. Never retarget tags or replace binaries.
+2026-11-21T02:21:14.2623076Z Traceback (most recent call last):
+2026-11-21T02:21:14.2623364Z   File "/workspace/firebadnofire/dronesmc/scripts/ci/release.py", line 289, in <module>
+2026-11-21T02:21:14.2623644Z     main()
+2026-11-21T02:21:14.2623843Z   File "/workspace/firebadnofire/dronesmc/scripts/ci/release.py", line 284, in main
+2026-11-21T02:21:14.2624202Z     publish_targets(targets, files)
+2026-11-21T02:21:14.2624412Z   File "/workspace/firebadnofire/dronesmc/scripts/ci/release.py", line 240, in publish_targets
+2026-11-21T02:21:14.2624676Z     release = target.stage()
+2026-11-21T02:21:14.2624915Z               ^^^^^^^^^^^^^^
+2026-11-21T02:21:14.2625095Z   File "/workspace/firebadnofire/dronesmc/scripts/ci/release.py", line 220, in stage
+2026-11-21T02:21:14.2625369Z     self.check_assets(release)
+2026-11-21T02:21:14.2625567Z   File "/workspace/firebadnofire/dronesmc/scripts/ci/release.py", line 166, in check_assets
+2026-11-21T02:21:14.2626096Z     data = self.asset_bytes(asset)
+2026-11-21T02:21:14.2626288Z            ^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-21T02:21:14.2626537Z   File "/workspace/firebadnofire/dronesmc/scripts/ci/release.py", line 156, in asset_bytes
+2026-11-21T02:21:14.2626858Z     return self.api.request('GET', asset['browser_download_url'], raw=True)
+2026-11-21T02:21:14.2627940Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-21T02:21:14.2628427Z   File "/workspace/firebadnofire/dronesmc/scripts/ci/release.py", line 59, in request
+2026-11-21T02:21:14.2628554Z     raise RuntimeError(f'{method} {urllib.parse.urlsplit(url).path}: HTTP {error.code}: {detail}') from None
+2026-11-21T02:21:14.2628786Z RuntimeError: GET /firebadnofire/dronesmc/releases/download/v0.0.1/dronesmc-0.1.1-beta.jar: HTTP 404: Not Found
+2026-11-21T02:21:14.2628903Z 
+2026-11-21T02:21:14.3020180Z ⚙️ [runner]: exitcode '1': failure
+2026-11-21T02:21:14.3139675Z ⭐ Run Post https://data.forgejo.org/actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-21T02:21:14.3179142Z   🐳  docker exec cmd=[node /var/run/act/actions/85/37dd24d31913e69597b7b46016ad45c54de61991e6b6000d936ad54e2bc5d7/dist/index.js] user= workdir=
+2026-11-21T02:21:14.4629810Z [command]/usr/bin/git version
+2026-11-21T02:21:14.4670335Z git version 2.39.5
+2026-11-21T02:21:14.4692947Z   ⚙  ***
+2026-11-21T02:21:14.4714806Z Temporarily overriding HOME='/tmp/f4e8a964-3e50-4277-b1eb-a25bbee9a5b4' before making global git config changes
+2026-11-21T02:21:14.4715236Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-21T02:21:14.4720226Z [command]/usr/bin/git config --global --add safe.directory /workspace/firebadnofire/dronesmc
+2026-11-21T02:21:14.4753765Z Removing SSH command configuration
+2026-11-21T02:21:14.4758509Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T02:21:14.4798573Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T02:21:14.5187411Z Removing HTTP extra header
+2026-11-21T02:21:14.5191342Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader
+2026-11-21T02:21:14.5224932Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader' && git config --local --unset-all 'http.https://pubcode.archuser.org/.extraheader' || :"
+2026-11-21T02:21:14.5626359Z Removing includeIf entries pointing to credentials config files
+2026-11-21T02:21:14.5633838Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T02:21:14.5677526Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T02:21:14.6201069Z   ✅  Success - Post https://data.forgejo.org/actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-21T02:21:14.6431237Z 🏁  Job failed
+2026-11-21T02:21:14.8638964Z Job 'release' failed

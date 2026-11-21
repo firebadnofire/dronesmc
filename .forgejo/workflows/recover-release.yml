@@ -10,10 +10,6 @@ on:
         description: 'API run ID of the original tag build (not the displayed run number)'
         type: string
         required: true
-  # One-time repair trigger; removed after the v0.0.1 recovery succeeds.
-  push:
-    branches: [main]
-    paths: ['.forgejo/workflows/recover-release.yml']
 
 jobs:
   recover:
@@ -23,8 +19,8 @@ jobs:
       image: node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496
     timeout-minutes: 20
     env:
-      RECOVERY_RELEASE_TAG: ${{ inputs.tag || 'v0.0.1' }}
-      RECOVERY_RUN_ID: ${{ inputs.run_id || '918' }}
+      RECOVERY_RELEASE_TAG: ${{ inputs.tag }}
+      RECOVERY_RUN_ID: ${{ inputs.run_id }}
     steps:
       - name: Install release utilities
         run: |

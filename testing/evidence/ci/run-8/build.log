@@ -1,0 +1,574 @@
+2026-11-21T02:19:01.2920729Z Runner c3d6a19b-ccd0-43ce-94c4-98086e60a879 (version:v12.13.2) received task 2940 of job build, triggered by event: push
+2026-11-21T02:19:01.2945514Z workflow prepared
+2026-11-21T02:19:01.3216336Z 🚀  Start image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496
+2026-11-21T02:19:01.3409702Z   🐳  docker create image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496 platform=linux/amd64 entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+2026-11-21T02:19:01.4681204Z   🐳  docker run image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496 platform=linux/amd64 entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+2026-11-21T02:19:01.7428162Z   ☁️  git fetch 'https://data.forgejo.org/actions/checkout' skipped; ref=3d3c42e5aac5ba805825da76410c181273ba90b1 cached
+2026-11-21T02:19:01.7908681Z   ☁️  git fetch 'https://data.forgejo.org/actions/setup-java' skipped; ref=d1374f8ac74474200d16ef8ecee22c7ae7a51880 cached
+2026-11-21T02:19:01.9338399Z   ☁️  git fetch 'https://data.forgejo.org/actions/upload-artifact' skipped; ref=ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5 cached
+2026-11-21T02:19:01.9852610Z   ☁️  git fetch 'https://data.forgejo.org/actions/upload-artifact' skipped; ref=ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5 cached
+2026-11-21T02:19:02.0278037Z ⭐ Run Main Install build utilities
+2026-11-21T02:19:02.0349239Z   🐳  docker exec cmd=[sh /var/run/act/9a4da1c5a28592bf.sh] user= workdir=
+2026-11-21T02:19:02.1046387Z   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0.sh] user= workdir=
+2026-11-21T02:19:02.2878802Z Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+2026-11-21T02:19:02.3340568Z Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+2026-11-21T02:19:02.3521319Z Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+2026-11-21T02:19:02.4321871Z Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+2026-11-21T02:19:02.6133823Z Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+2026-11-21T02:19:02.6723112Z Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [378 kB]
+2026-11-21T02:19:03.1876296Z Fetched 9417 kB in 1s (9451 kB/s)
+2026-11-21T02:19:03.4936412Z Reading package lists...
+2026-11-21T02:19:03.8086126Z Reading package lists...
+2026-11-21T02:19:03.9064866Z Building dependency tree...
+2026-11-21T02:19:03.9066785Z Reading state information...
+2026-11-21T02:19:04.0010996Z git is already the newest version (1:2.39.5-0+deb12u3).
+2026-11-21T02:19:04.0011402Z python3 is already the newest version (3.11.2-1+b1).
+2026-11-21T02:19:04.0011628Z python3 set to manually installed.
+2026-11-21T02:19:04.0011771Z gnupg is already the newest version (2.2.40-1.1+deb12u2).
+2026-11-21T02:19:04.0011902Z ca-certificates is already the newest version (20250419~deb12u2).
+2026-11-21T02:19:04.0012072Z 0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+2026-11-21T02:19:04.1605040Z ::add-matcher::/run/act/actions/3d/5b2eba3b258dea2961b9920a76d54eb24f67b1a23daeb73baef119c180c5e0/dist/problem-matcher.json
+2026-11-21T02:19:04.1606386Z Syncing repository: firebadnofire/dronesmc
+2026-11-21T02:19:04.1608326Z ##[group]Getting Git version info
+2026-11-21T02:19:04.1608567Z Working directory is '/workspace/firebadnofire/dronesmc'
+2026-11-21T02:19:04.1627296Z [command]/usr/bin/git version
+2026-11-21T02:19:04.1664017Z git version 2.39.5
+2026-11-21T02:19:04.1678928Z ##[endgroup]
+2026-11-21T02:19:04.1686975Z Temporarily overriding HOME='/tmp/9ad111ac-bcdc-433d-b2b6-1470eea189c6' before making global git config changes
+2026-11-21T02:19:04.1687278Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-21T02:19:04.1690068Z [command]/usr/bin/git config --global --add safe.directory /workspace/firebadnofire/dronesmc
+2026-11-21T02:19:04.1713984Z Deleting the contents of '/workspace/firebadnofire/dronesmc'
+2026-11-21T02:19:04.1718244Z ##[group]Determining repository object format
+2026-11-21T02:19:04.1720270Z ##[endgroup]
+2026-11-21T02:19:04.1720642Z ##[group]Initializing the repository
+2026-11-21T02:19:04.1725501Z [command]/usr/bin/git init /workspace/firebadnofire/dronesmc
+2026-11-21T02:19:04.1759130Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-21T02:19:04.1759390Z hint: is subject to change. To configure the initial branch name to use in all
+2026-11-21T02:19:04.1759501Z hint: of your new repositories, which will suppress this warning, call:
+2026-11-21T02:19:04.1759592Z hint: 
+2026-11-21T02:19:04.1759672Z hint: 	git config --global init.defaultBranch <name>
+2026-11-21T02:19:04.1759767Z hint: 
+2026-11-21T02:19:04.1759825Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-21T02:19:04.1759946Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-21T02:19:04.1760016Z hint: 
+2026-11-21T02:19:04.1760084Z hint: 	git branch -m <name>
+2026-11-21T02:19:04.1765707Z Initialized empty Git repository in /workspace/firebadnofire/dronesmc/.git/
+2026-11-21T02:19:04.1776482Z [command]/usr/bin/git remote add origin https://pubcode.archuser.org/firebadnofire/dronesmc
+2026-11-21T02:19:04.1807883Z ##[endgroup]
+2026-11-21T02:19:04.1808268Z ##[group]Disabling automatic garbage collection
+2026-11-21T02:19:04.1810194Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-21T02:19:04.1845068Z ##[endgroup]
+2026-11-21T02:19:04.1845418Z ##[group]Setting up auth
+2026-11-21T02:19:04.1845867Z Removing SSH command configuration
+2026-11-21T02:19:04.1848636Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T02:19:04.1883065Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T02:19:04.2187034Z Removing HTTP extra header
+2026-11-21T02:19:04.2193189Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader
+2026-11-21T02:19:04.2231105Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader' && git config --local --unset-all 'http.https://pubcode.archuser.org/.extraheader' || :"
+2026-11-21T02:19:04.2558574Z Removing includeIf entries pointing to credentials config files
+2026-11-21T02:19:04.2562428Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T02:19:04.2591579Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T02:19:04.2881814Z [command]/usr/bin/git config --file /tmp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config http.https://pubcode.archuser.org/.extraheader AUTHORIZATION: basic ***
+2026-11-21T02:19:04.2925375Z [command]/usr/bin/git config --local includeIf.gitdir:/workspace/firebadnofire/dronesmc/.git.path /tmp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config
+2026-11-21T02:19:04.2952879Z [command]/usr/bin/git config --local includeIf.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path /tmp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config
+2026-11-21T02:19:04.2983265Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config
+2026-11-21T02:19:04.3017426Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config
+2026-11-21T02:19:04.3042199Z ##[endgroup]
+2026-11-21T02:19:04.3042600Z ##[group]Fetching the repository
+2026-11-21T02:19:04.3045490Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-11-21T02:19:04.6930906Z From https://pubcode.archuser.org/firebadnofire/dronesmc
+2026-11-21T02:19:04.6931320Z  * [new branch]      codex/ci-config-preflight -> origin/codex/ci-config-preflight
+2026-11-21T02:19:04.6931899Z  * [new branch]      codex/ci-preflight -> origin/codex/ci-preflight
+2026-11-21T02:19:04.6934388Z  * [new branch]      main               -> origin/main
+2026-11-21T02:19:04.6936343Z  * [new tag]         v0.0.1             -> v0.0.1
+2026-11-21T02:19:04.6957317Z [command]/usr/bin/git tag --list v0.0.1
+2026-11-21T02:19:04.6980714Z v0.0.1
+2026-11-21T02:19:04.6988247Z [command]/usr/bin/git rev-parse refs/tags/v0.0.1^{commit}
+2026-11-21T02:19:04.7021380Z abbaad5b6f83828dafc77e0b317f0f10733b964c
+2026-11-21T02:19:04.7025370Z ##[endgroup]
+2026-11-21T02:19:04.7025890Z ##[group]Determining the checkout info
+2026-11-21T02:19:04.7027560Z ##[endgroup]
+2026-11-21T02:19:04.7031275Z [command]/usr/bin/git sparse-checkout disable
+2026-11-21T02:19:04.7065087Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-21T02:19:04.7092315Z ##[group]Checking out the ref
+2026-11-21T02:19:04.7096120Z [command]/usr/bin/git checkout --progress --force refs/tags/v0.0.1
+2026-11-21T02:19:04.7198500Z Note: switching to 'refs/tags/v0.0.1'.
+2026-11-21T02:19:04.7198809Z 
+2026-11-21T02:19:04.7198996Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-21T02:19:04.7199157Z changes and commit them, and you can discard any commits you make in this
+2026-11-21T02:19:04.7199336Z state without impacting any branches by switching back to a branch.
+2026-11-21T02:19:04.7199481Z 
+2026-11-21T02:19:04.7199622Z If you want to create a new branch to retain commits you create, you may
+2026-11-21T02:19:04.7199755Z do so (now or later) by using -c with the switch command. Example:
+2026-11-21T02:19:04.7199896Z 
+2026-11-21T02:19:04.7200069Z   git switch -c <new-branch-name>
+2026-11-21T02:19:04.7200196Z 
+2026-11-21T02:19:04.7200318Z Or undo this operation with:
+2026-11-21T02:19:04.7200435Z 
+2026-11-21T02:19:04.7200561Z   git switch -
+2026-11-21T02:19:04.7200689Z 
+2026-11-21T02:19:04.7200807Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-21T02:19:04.7200949Z 
+2026-11-21T02:19:04.7201066Z HEAD is now at abbaad5 Add DronesMC project and signed releases triggered by v and V tags
+2026-11-21T02:19:04.7204040Z ##[endgroup]
+2026-11-21T02:19:04.7241470Z [command]/usr/bin/git log -1 --format=%H
+2026-11-21T02:19:04.7268749Z abbaad5b6f83828dafc77e0b317f0f10733b964c
+2026-11-21T02:19:04.7280348Z ##[group]Removing auth
+2026-11-21T02:19:04.7280672Z Removing SSH command configuration
+2026-11-21T02:19:04.7283939Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T02:19:04.7323376Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T02:19:04.7615015Z Removing HTTP extra header
+2026-11-21T02:19:04.7619342Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader
+2026-11-21T02:19:04.7657259Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader' && git config --local --unset-all 'http.https://pubcode.archuser.org/.extraheader' || :"
+2026-11-21T02:19:04.7944674Z Removing includeIf entries pointing to credentials config files
+2026-11-21T02:19:04.7950343Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T02:19:04.7975798Z includeif.gitdir:/workspace/firebadnofire/dronesmc/.git.path
+2026-11-21T02:19:04.7976033Z includeif.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path
+2026-11-21T02:19:04.7976227Z includeif.gitdir:/github/workspace/.git.path
+2026-11-21T02:19:04.7976368Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-21T02:19:04.7984602Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/workspace/firebadnofire/dronesmc/.git.path
+2026-11-21T02:19:04.8016190Z /tmp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config
+2026-11-21T02:19:04.8027100Z [command]/usr/bin/git config --local --unset includeif.gitdir:/workspace/firebadnofire/dronesmc/.git.path \/tmp\/git\-credentials\-1ec7f8e8\-ff54\-4d8d\-a5f7\-fa9dafe72b0c\.config
+2026-11-21T02:19:04.8059505Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path
+2026-11-21T02:19:04.8077626Z /tmp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config
+2026-11-21T02:19:04.8082871Z [command]/usr/bin/git config --local --unset includeif.gitdir:/workspace/firebadnofire/dronesmc/.git/worktrees/*.path \/tmp\/git\-credentials\-1ec7f8e8\-ff54\-4d8d\-a5f7\-fa9dafe72b0c\.config
+2026-11-21T02:19:04.8118595Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-21T02:19:04.8140994Z /github/runner_temp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config
+2026-11-21T02:19:04.8145830Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-1ec7f8e8\-ff54\-4d8d\-a5f7\-fa9dafe72b0c\.config
+2026-11-21T02:19:04.8179923Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-21T02:19:04.8201419Z /github/runner_temp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config
+2026-11-21T02:19:04.8206106Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-1ec7f8e8\-ff54\-4d8d\-a5f7\-fa9dafe72b0c\.config
+2026-11-21T02:19:04.8248450Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T02:19:04.8549540Z Removing credentials config '/tmp/git-credentials-1ec7f8e8-ff54-4d8d-a5f7-fa9dafe72b0c.config'
+2026-11-21T02:19:04.8559201Z ##[endgroup]
+2026-11-21T02:19:04.8560317Z ::remove-matcher owner=checkout-git::
+2026-11-21T02:19:05.1143707Z ##[group]Installed distributions
+2026-11-21T02:19:05.1180847Z Trying to resolve the latest version from remote
+2026-11-21T02:19:05.6950027Z Resolved latest version as 8.0.472+8
+2026-11-21T02:19:05.6950441Z Trying to download...
+2026-11-21T02:19:05.6950944Z Downloading Java 8.0.472+8 (Temurin-Hotspot) from https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u472-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u472b08.tar.gz ...
+2026-11-21T02:19:15.0692195Z Verifying Java package signature...
+2026-11-21T02:19:15.8869874Z Extracting Java archive...
+2026-11-21T02:19:15.8959841Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /tmp/08bb858c-c7d7-47c9-93b5-cd4bd86a0984 -f /tmp/0c8089cb-3bb5-4ff9-81a2-8042a33d1c43
+2026-11-21T02:19:16.8308727Z Java 8.0.472+8 was downloaded
+2026-11-21T02:19:16.8309037Z Setting Java 8.0.472+8 as the default
+2026-11-21T02:19:16.8313304Z 
+2026-11-21T02:19:16.8313398Z Java configuration:
+2026-11-21T02:19:16.8313480Z   Distribution: temurin
+2026-11-21T02:19:16.8313613Z   Version: 8.0.472+8
+2026-11-21T02:19:16.8313683Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.472-8/x64
+2026-11-21T02:19:16.8313773Z 
+2026-11-21T02:19:16.8314187Z ##[endgroup]
+2026-11-21T02:19:16.8349986Z Creating settings.xml with server-id: github
+2026-11-21T02:19:16.8351005Z Creating toolchains.xml for JDK version 8.0.472+8 from temurin
+2026-11-21T02:19:16.8353731Z Writing to /root/.m2/settings.xml
+2026-11-21T02:19:16.8356120Z Writing to /root/.m2/toolchains.xml
+2026-11-21T02:19:16.8361426Z Configured MAVEN_ARGS to include -ntp to suppress Maven transfer progress logs. Set 'show-download-progress: true' to keep the download progress output.
+2026-11-21T02:19:17.0333659Z test_annotated_github_tag_resolves_to_expected_commit (test_release.PublisherTests.test_annotated_github_tag_resolves_to_expected_commit) ... ok
+2026-11-21T02:19:17.0346993Z test_bad_signature_fails_closed (test_release.PublisherTests.test_bad_signature_fails_closed) ... ok
+2026-11-21T02:19:17.0355401Z test_both_drafts_verified_before_first_finalize (test_release.PublisherTests.test_both_drafts_verified_before_first_finalize) ... ok
+2026-11-21T02:19:17.0372653Z test_changed_published_binary_is_rejected (test_release.PublisherTests.test_changed_published_binary_is_rejected) ... ok
+2026-11-21T02:19:17.0388445Z test_draft_upload_verify_then_normal_release (test_release.PublisherTests.test_draft_upload_verify_then_normal_release) ... ok
+2026-11-21T02:19:17.0388960Z test_github_collision (test_release.PublisherTests.test_github_collision) ... ok
+2026-11-21T02:19:17.0402904Z test_github_upload_and_download_then_normal_release (test_release.PublisherTests.test_github_upload_and_download_then_normal_release) ... ok
+2026-11-21T02:19:17.0403600Z test_metadata_mismatch_fails (test_release.PublisherTests.test_metadata_mismatch_fails) ... ok
+2026-11-21T02:19:17.0424490Z test_partial_failure_can_resume (test_release.PublisherTests.test_partial_failure_can_resume) ... ok
+2026-11-21T02:19:17.0424747Z test_release_notes_are_version_derived (test_release.PublisherTests.test_release_notes_are_version_derived) ... ok
+2026-11-21T02:19:17.0483974Z test_release_uses_original_tag_case_on_both_platforms (test_release.PublisherTests.test_release_uses_original_tag_case_on_both_platforms) ... ok
+2026-11-21T02:19:17.0487861Z test_second_target_staging_failure_prevents_finalization (test_release.PublisherTests.test_second_target_staging_failure_prevents_finalization) ... Publication incomplete. One target may already be public. Rerun the same commit with the same signing key; verified existing assets will be retained. Never retarget tags or replace binaries.
+2026-11-21T02:19:17.0488402Z ok
+2026-11-21T02:19:17.0512246Z test_signature_variation_is_verified_not_overwritten (test_release.PublisherTests.test_signature_variation_is_verified_not_overwritten) ... ok
+2026-11-21T02:19:17.0512897Z test_tag_collision_never_retargets (test_release.PublisherTests.test_tag_collision_never_retargets) ... ok
+2026-11-21T02:19:17.0514113Z test_tag_event_guard (test_release.PublisherTests.test_tag_event_guard) ... ok
+2026-11-21T02:19:17.0514896Z test_unexpected_asset_fails (test_release.PublisherTests.test_unexpected_asset_fails) ... ok
+2026-11-21T02:19:17.0519949Z test_divergent_main_cannot_be_pushed (test_release.SyncTests.test_divergent_main_cannot_be_pushed) ... ok
+2026-11-21T02:19:17.0524522Z test_small_repository_with_other_branches_is_rejected (test_release.SyncTests.test_small_repository_with_other_branches_is_rejected) ... ok
+2026-11-21T02:19:17.0537031Z test_source_sync_uses_askpass_without_token_in_command (test_release.SyncTests.test_source_sync_uses_askpass_without_token_in_command) ... ok
+2026-11-21T02:19:17.0542064Z test_unrelated_repository_without_main_is_rejected (test_release.SyncTests.test_unrelated_repository_without_main_is_rejected) ... ok
+2026-11-21T02:19:17.0570574Z test_independent_success_phases (test_smoke.SmokeTests.test_independent_success_phases) ... ok
+2026-11-21T02:19:17.0592697Z test_loader_errors_fail (test_smoke.SmokeTests.test_loader_errors_fail) ... ok
+2026-11-21T02:19:17.0653451Z test_startup_timeout_cleans_up (test_smoke.SmokeTests.test_startup_timeout_cleans_up) ... ok
+2026-11-21T02:19:17.0675327Z test_unexpected_exit_fails (test_smoke.SmokeTests.test_unexpected_exit_fails) ... ok
+2026-11-21T02:19:17.0698565Z test_world_ready_without_loaded_mod_fails (test_smoke.SmokeTests.test_world_ready_without_loaded_mod_fails) ... ok
+2026-11-21T02:19:17.0698856Z 
+2026-11-21T02:19:17.0699009Z ----------------------------------------------------------------------
+2026-11-21T02:19:17.0699368Z Ran 25 tests in 0.037s
+2026-11-21T02:19:17.0699521Z 
+2026-11-21T02:19:17.0699648Z OK
+2026-11-21T02:19:17.0699819Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": true, "mod_loaded": true, "observation": true, "shutdown": true, "passed": true, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "ready_after_seconds": 10, "healthy_seconds": 20}
+2026-11-21T02:19:17.0700022Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": false, "mod_loaded": false, "observation": false, "shutdown": false, "passed": false, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "error": "Server logged a startup/runtime error"}
+2026-11-21T02:19:17.0700218Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": false, "mod_loaded": false, "observation": false, "shutdown": false, "passed": false, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "error": "Server startup or 10-second observation timed out"}
+2026-11-21T02:19:17.0700443Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": false, "mod_loaded": false, "observation": false, "shutdown": false, "passed": false, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "error": "Server terminated unexpectedly before shutdown"}
+2026-11-21T02:19:17.0700666Z {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "a8b077366207a4f60b23396338f9e2d65007c87d49e7bcc1f8f7d18db947d085", "version": "0.1.1-beta", "startup": true, "mod_loaded": false, "observation": false, "shutdown": false, "passed": false, "installer_sha256": "9c0d294c05fc1d88d698034609bb81c0c69196327594e4c69d2915c80fd9850c", "ready_after_seconds": 10, "error": "World ready but DronesMC loaded/initialized evidence absent"}
+2026-11-21T02:19:17.2381053Z openjdk version "1.8.0_472"
+2026-11-21T02:19:17.3150469Z Downloading https://services.gradle.org/distributions/gradle-4.9-bin.zip
+2026-11-21T02:19:22.6350446Z ........................................................................
+2026-11-21T02:19:22.6353813Z Unzipping /root/.gradle/wrapper/dists/gradle-4.9-bin/e9cinqnqvph59rr7g70qubb4t/gradle-4.9-bin.zip to /root/.gradle/wrapper/dists/gradle-4.9-bin/e9cinqnqvph59rr7g70qubb4t
+2026-11-21T02:19:23.1685577Z Set executable permissions for: /root/.gradle/wrapper/dists/gradle-4.9-bin/e9cinqnqvph59rr7g70qubb4t/gradle-4.9/bin/gradle
+2026-11-21T02:19:23.3679493Z 
+2026-11-21T02:19:23.3679982Z Welcome to Gradle 4.9!
+2026-11-21T02:19:23.3680164Z 
+2026-11-21T02:19:23.3680401Z Here are the highlights of this release:
+2026-11-21T02:19:23.3681435Z  - Experimental APIs for creating and configuring tasks lazily
+2026-11-21T02:19:23.3681847Z  - Pass arguments to JavaExec via CLI
+2026-11-21T02:19:23.3682789Z  - Auxiliary publication dependency support for multi-project builds
+2026-11-21T02:19:23.3684133Z  - Improved dependency insight report
+2026-11-21T02:19:23.3684295Z 
+2026-11-21T02:19:23.3684842Z For more details see https://docs.gradle.org/4.9/release-notes.html
+2026-11-21T02:19:23.3685000Z 
+2026-11-21T02:19:23.3718636Z 
+2026-11-21T02:19:23.3719030Z ------------------------------------------------------------
+2026-11-21T02:19:23.3719306Z Gradle 4.9
+2026-11-21T02:19:23.3720127Z ------------------------------------------------------------
+2026-11-21T02:19:23.3720313Z 
+2026-11-21T02:19:23.3720584Z Build time:   2018-07-16 08:14:03 UTC
+2026-11-21T02:19:23.3720732Z Revision:     efcf8c1cf533b03c70f394f270f46a174c738efc
+2026-11-21T02:19:23.3720911Z 
+2026-11-21T02:19:23.3721192Z Kotlin DSL:   0.18.4
+2026-11-21T02:19:23.3721445Z Kotlin:       1.2.41
+2026-11-21T02:19:23.3721587Z Groovy:       2.4.12
+2026-11-21T02:19:23.3721913Z Ant:          Apache Ant(TM) version 1.9.11 compiled on March 23 2018
+2026-11-21T02:19:23.3722181Z JVM:          1.8.0_472 (Temurin 25.472-b08)
+2026-11-21T02:19:23.3722505Z OS:           Linux 7.3.4-1-default amd64
+2026-11-21T02:19:23.3722577Z 
+2026-11-21T02:19:23.3919474Z Welcome to Gradle 4.9!
+2026-11-21T02:19:23.3919828Z Gradle 4.9
+2026-11-21T02:19:23.6969863Z To honour the JVM settings for this build a new JVM will be forked. Please consider using the daemon: https://docs.gradle.org/4.9/userguide/gradle_daemon.html.
+2026-11-21T02:19:24.1961665Z Daemon will be stopped at the end of the build stopping after processing
+2026-11-21T02:19:25.3960393Z Download https://maven.minecraftforge.net/net/minecraftforge/gradle/ForgeGradle/3.0.197/ForgeGradle-3.0.197.pom
+2026-11-21T02:19:25.5963169Z Download https://maven.minecraftforge.net/net/minecraftforge/artifactural/maven-metadata.xml
+2026-11-21T02:19:25.5963975Z Download https://maven.minecraftforge.net/net/minecraftforge/artifactural/1.0.13/artifactural-1.0.13.pom
+2026-11-21T02:19:25.7959669Z Download https://maven.minecraftforge.net/dev/gradleplugins/gradle-api/4.9/gradle-api-4.9.pom
+2026-11-21T02:19:25.8962110Z Download https://maven.minecraftforge.net/com/google/guava/guava/26.0-jre/guava-26.0-jre.pom
+2026-11-21T02:19:25.8963015Z Download https://maven.minecraftforge.net/commons-io/commons-io/2.4/commons-io-2.4.pom
+2026-11-21T02:19:25.8963673Z Download https://maven.minecraftforge.net/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.pom
+2026-11-21T02:19:25.8964559Z Download https://maven.minecraftforge.net/com/cloudbees/diff4j/1.2/diff4j-1.2.pom
+2026-11-21T02:19:25.8966636Z Download https://maven.minecraftforge.net/com/google/code/gson/gson/2.8.5/gson-2.8.5.pom
+2026-11-21T02:19:25.8968422Z Download https://maven.minecraftforge.net/org/apache/maven/maven-artifact/3.6.0/maven-artifact-3.6.0.pom
+2026-11-21T02:19:25.9960721Z Download https://maven.minecraftforge.net/org/apache/commons/commons-parent/25/commons-parent-25.pom
+2026-11-21T02:19:25.9961417Z Download https://maven.minecraftforge.net/com/google/code/gson/gson-parent/2.8.5/gson-parent-2.8.5.pom
+2026-11-21T02:19:25.9961788Z Download https://maven.minecraftforge.net/org/apache/maven/maven/3.6.0/maven-3.6.0.pom
+2026-11-21T02:19:26.0961570Z Download https://maven.minecraftforge.net/org/apache/apache/9/apache-9.pom
+2026-11-21T02:19:26.0962620Z Download https://maven.minecraftforge.net/org/apache/maven/maven-parent/33/maven-parent-33.pom
+2026-11-21T02:19:26.0963548Z Download https://maven.minecraftforge.net/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+2026-11-21T02:19:26.1962237Z Download https://maven.minecraftforge.net/org/apache/apache/21/apache-21.pom
+2026-11-21T02:19:26.1963597Z Download https://maven.minecraftforge.net/com/github/jponge/lzma-java/1.3/lzma-java-1.3.pom
+2026-11-21T02:19:26.1964239Z Download https://maven.minecraftforge.net/de/siegmar/fastcsv/1.0.2/fastcsv-1.0.2.pom
+2026-11-21T02:19:26.1965230Z Download https://maven.minecraftforge.net/com/nothome/javaxdelta/2.0.1/javaxdelta-2.0.1.pom
+2026-11-21T02:19:26.3961839Z Download https://maven.minecraftforge.net/org/apache/httpcomponents/httpcomponents-client/4.3.3/httpcomponents-client-4.3.3.pom
+2026-11-21T02:19:26.3962497Z Download https://maven.minecraftforge.net/com/google/guava/guava-parent/26.0-jre/guava-parent-26.0-jre.pom
+2026-11-21T02:19:26.3963539Z Download https://maven.minecraftforge.net/net/minecraftforge/srgutils/0.2.12/srgutils-0.2.12.pom
+2026-11-21T02:19:26.4962443Z Download https://maven.minecraftforge.net/com/cloudbees/cloudbees-oss-parent/4/cloudbees-oss-parent-4.pom
+2026-11-21T02:19:26.5963505Z Download https://maven.minecraftforge.net/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+2026-11-21T02:19:26.6960423Z Download https://maven.minecraftforge.net/org/apache/httpcomponents/project/7/project-7.pom
+2026-11-21T02:19:26.8960443Z Download https://maven.minecraftforge.net/org/apache/apache/13/apache-13.pom
+2026-11-21T02:19:27.0961610Z Download https://maven.minecraftforge.net/org/codehaus/groovy/groovy/2.4.12/groovy-2.4.12.pom
+2026-11-21T02:19:27.1961473Z Download https://maven.minecraftforge.net/org/jvnet/localizer/localizer/1.12/localizer-1.12.pom
+2026-11-21T02:19:27.2961960Z Download https://maven.minecraftforge.net/org/jvnet/localizer/localizer-parent/1.12/localizer-parent-1.12.pom
+2026-11-21T02:19:27.3961716Z Download https://maven.minecraftforge.net/trove/trove/1.0.2/trove-1.0.2.pom
+2026-11-21T02:19:27.4960811Z Download https://maven.minecraftforge.net/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom
+2026-11-21T02:19:27.4961591Z Download https://maven.minecraftforge.net/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.pom
+2026-11-21T02:19:27.4962447Z Download https://maven.minecraftforge.net/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.pom
+2026-11-21T02:19:27.4963250Z Download https://maven.minecraftforge.net/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.pom
+2026-11-21T02:19:27.4964368Z Download https://maven.minecraftforge.net/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.pom
+2026-11-21T02:19:27.4965468Z Download https://maven.minecraftforge.net/org/codehaus/mojo/animal-sniffer-parent/1.14/animal-sniffer-parent-1.14.pom
+2026-11-21T02:19:27.4966632Z Download https://maven.minecraftforge.net/com/google/errorprone/error_prone_parent/2.1.3/error_prone_parent-2.1.3.pom
+2026-11-21T02:19:27.5961580Z Download https://maven.minecraftforge.net/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom
+2026-11-21T02:19:27.6959910Z Download https://maven.minecraftforge.net/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom
+2026-11-21T02:19:27.6960610Z Download https://maven.minecraftforge.net/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.pom
+2026-11-21T02:19:27.6963383Z Download https://maven.minecraftforge.net/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.pom
+2026-11-21T02:19:27.7961512Z Download https://maven.minecraftforge.net/org/apache/commons/commons-parent/47/commons-parent-47.pom
+2026-11-21T02:19:27.7962660Z Download https://maven.minecraftforge.net/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom
+2026-11-21T02:19:27.8962144Z Download https://maven.minecraftforge.net/org/apache/apache/19/apache-19.pom
+2026-11-21T02:19:27.8962820Z Download https://maven.minecraftforge.net/org/sonatype/forge/forge-parent/10/forge-parent-10.pom
+2026-11-21T02:19:27.9961761Z Download https://maven.minecraftforge.net/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+2026-11-21T02:19:27.9962489Z Download https://maven.minecraftforge.net/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+2026-11-21T02:19:27.9963100Z Download https://maven.minecraftforge.net/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.pom
+2026-11-21T02:19:28.0960723Z Download https://maven.minecraftforge.net/org/apache/commons/commons-parent/22/commons-parent-22.pom
+2026-11-21T02:19:28.0961518Z Download https://maven.minecraftforge.net/org/apache/httpcomponents/httpcomponents-core/4.3.2/httpcomponents-core-4.3.2.pom
+2026-11-21T02:19:28.0963782Z Download https://maven.minecraftforge.net/org/apache/commons/commons-parent/28/commons-parent-28.pom
+2026-11-21T02:19:28.0964070Z Download https://maven.minecraftforge.net/commons-io/commons-io/2.4/commons-io-2.4.jar
+2026-11-21T02:19:28.0966540Z Download https://maven.minecraftforge.net/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
+2026-11-21T02:19:28.0966816Z Download https://maven.minecraftforge.net/com/nothome/javaxdelta/2.0.1/javaxdelta-2.0.1.jar
+2026-11-21T02:19:28.0967369Z Download https://maven.minecraftforge.net/org/apache/maven/maven-artifact/3.6.0/maven-artifact-3.6.0.jar
+2026-11-21T02:19:28.0967578Z Download https://maven.minecraftforge.net/net/minecraftforge/srgutils/0.2.12/srgutils-0.2.12.jar
+2026-11-21T02:19:28.0967775Z Download https://maven.minecraftforge.net/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar
+2026-11-21T02:19:28.0967964Z Download https://maven.minecraftforge.net/com/google/guava/guava/26.0-jre/guava-26.0-jre.jar
+2026-11-21T02:19:28.0968284Z Download https://maven.minecraftforge.net/com/github/jponge/lzma-java/1.3/lzma-java-1.3.jar
+2026-11-21T02:19:28.0968584Z Download https://maven.minecraftforge.net/net/minecraftforge/gradle/ForgeGradle/3.0.197/ForgeGradle-3.0.197.jar
+2026-11-21T02:19:28.0970901Z Download https://maven.minecraftforge.net/org/jvnet/localizer/localizer/1.12/localizer-1.12.jar
+2026-11-21T02:19:28.1960729Z Download https://maven.minecraftforge.net/de/siegmar/fastcsv/1.0.2/fastcsv-1.0.2.jar
+2026-11-21T02:19:28.1961496Z Download https://maven.minecraftforge.net/trove/trove/1.0.2/trove-1.0.2.jar
+2026-11-21T02:19:28.1961747Z Download https://maven.minecraftforge.net/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar
+2026-11-21T02:19:28.1962515Z Download https://maven.minecraftforge.net/com/cloudbees/diff4j/1.2/diff4j-1.2.jar
+2026-11-21T02:19:28.1963248Z Download https://maven.minecraftforge.net/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.jar
+2026-11-21T02:19:28.1963702Z Download https://maven.minecraftforge.net/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.jar
+2026-11-21T02:19:28.1964532Z Download https://maven.minecraftforge.net/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+2026-11-21T02:19:28.1964781Z Download https://maven.minecraftforge.net/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar
+2026-11-21T02:19:28.1965180Z Download https://maven.minecraftforge.net/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar
+2026-11-21T02:19:28.1965509Z Download https://maven.minecraftforge.net/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar
+2026-11-21T02:19:28.1965840Z Download https://maven.minecraftforge.net/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar
+2026-11-21T02:19:28.1966388Z Download https://maven.minecraftforge.net/net/minecraftforge/artifactural/1.0.13/artifactural-1.0.13.jar
+2026-11-21T02:19:28.1966713Z Download https://maven.minecraftforge.net/org/codehaus/groovy/groovy/2.4.12/groovy-2.4.12.jar
+2026-11-21T02:19:28.1967102Z Download https://maven.minecraftforge.net/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+2026-11-21T02:19:28.1967290Z Download https://maven.minecraftforge.net/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+2026-11-21T02:19:28.1967602Z Download https://maven.minecraftforge.net/dev/gradleplugins/gradle-api/4.9/gradle-api-4.9.jar
+2026-11-21T02:19:32.5964099Z 
+2026-11-21T02:19:32.5972395Z > Configure project :
+2026-11-21T02:19:32.5972732Z New Dep: net.minecraftforge:forge:1.12.2-14.23.5.2859_mapped_stable_39-1.12
+2026-11-21T02:19:34.3960792Z 
+2026-11-21T02:19:34.3961358Z Download https://maven.minecraftforge.net/net/minecraftforge/legacydev/maven-metadata.xml
+2026-11-21T02:19:34.4960754Z Download https://maven.minecraftforge.net/net/minecraftforge/legacydev/0.2.3.1/legacydev-0.2.3.1.pom
+2026-11-21T02:19:34.7961080Z Download https://maven.minecraftforge.net/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.pom
+2026-11-21T02:19:34.8961042Z Download https://maven.minecraftforge.net/com/google/code/findbugs/jsr305/3.0.1/jsr305-3.0.1.pom
+2026-11-21T02:19:34.8961554Z Download https://maven.minecraftforge.net/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.pom
+2026-11-21T02:19:34.8961826Z Download https://maven.minecraftforge.net/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.pom
+2026-11-21T02:19:34.8962152Z Download https://maven.minecraftforge.net/org/jline/jline/3.5.1/jline-3.5.1.pom
+2026-11-21T02:19:34.8962343Z Download https://maven.minecraftforge.net/com/typesafe/config/1.2.1/config-1.2.1.pom
+2026-11-21T02:19:34.8962520Z Download https://maven.minecraftforge.net/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.pom
+2026-11-21T02:19:34.8962675Z Download https://maven.minecraftforge.net/net/minecraftforge/mergetool/1.0.13/mergetool-1.0.13.pom
+2026-11-21T02:19:34.8962906Z Download https://maven.minecraftforge.net/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.pom
+2026-11-21T02:19:34.8963086Z Download https://maven.minecraftforge.net/org/ow2/asm/asm-debug-all/5.2/asm-debug-all-5.2.pom
+2026-11-21T02:19:34.9960026Z Download https://maven.minecraftforge.net/org/apache/maven/maven-artifact/3.5.3/maven-artifact-3.5.3.pom
+2026-11-21T02:19:34.9960640Z Download https://maven.minecraftforge.net/org/apache/logging/log4j/log4j-core/2.15.0/log4j-core-2.15.0.pom
+2026-11-21T02:19:34.9961121Z Download https://maven.minecraftforge.net/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.pom
+2026-11-21T02:19:34.9961665Z Download https://maven.minecraftforge.net/org/apache/logging/log4j/log4j-api/2.15.0/log4j-api-2.15.0.pom
+2026-11-21T02:19:34.9962230Z Download https://maven.minecraftforge.net/net/sf/jopt-simple/jopt-simple/5.0.3/jopt-simple-5.0.3.pom
+2026-11-21T02:19:34.9962951Z Download https://maven.minecraftforge.net/org/jline/jline-parent/3.5.1/jline-parent-3.5.1.pom
+2026-11-21T02:19:34.9963497Z Download https://maven.minecraftforge.net/org/ow2/asm/asm-parent/5.2/asm-parent-5.2.pom
+2026-11-21T02:19:34.9964786Z Download https://maven.minecraftforge.net/org/apache/logging/log4j/log4j-slf4j18-impl/2.15.0/log4j-slf4j18-impl-2.15.0.pom
+2026-11-21T02:19:34.9965804Z Download https://maven.minecraftforge.net/org/apache/maven/maven/3.5.3/maven-3.5.3.pom
+2026-11-21T02:19:34.9966372Z Download https://maven.minecraftforge.net/org/apache/logging/log4j/log4j/2.15.0/log4j-2.15.0.pom
+2026-11-21T02:19:35.0961843Z Download https://maven.minecraftforge.net/org/ow2/ow2/1.3/ow2-1.3.pom
+2026-11-21T02:19:35.0962466Z Download https://maven.minecraftforge.net/org/apache/maven/maven-parent/31/maven-parent-31.pom
+2026-11-21T02:19:35.1962013Z Download https://maven.minecraftforge.net/org/apache/logging/logging-parent/3/logging-parent-3.pom
+2026-11-21T02:19:35.2961141Z Download https://maven.minecraftforge.net/org/apache/apache/23/apache-23.pom
+2026-11-21T02:19:37.0959885Z Download https://maven.minecraftforge.net/commons-codec/commons-codec/1.10/commons-codec-1.10.pom
+2026-11-21T02:19:37.0960294Z Download https://maven.minecraftforge.net/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.pom
+2026-11-21T02:19:37.0960516Z Download https://maven.minecraftforge.net/net/java/dev/jna/platform/3.4.0/platform-3.4.0.pom
+2026-11-21T02:19:37.1961713Z Download https://maven.minecraftforge.net/commons-io/commons-io/2.5/commons-io-2.5.pom
+2026-11-21T02:19:37.1962501Z Download https://maven.minecraftforge.net/net/java/jinput/jinput/2.0.5/jinput-2.0.5.pom
+2026-11-21T02:19:37.1963007Z Download https://maven.minecraftforge.net/com/google/guava/guava/21.0/guava-21.0.pom
+2026-11-21T02:19:37.1963571Z Download https://maven.minecraftforge.net/org/apache/commons/commons-parent/35/commons-parent-35.pom
+2026-11-21T02:19:37.1964162Z Download https://maven.minecraftforge.net/net/java/jutils/jutils/1.0.0/jutils-1.0.0.pom
+2026-11-21T02:19:37.1966383Z Download https://maven.minecraftforge.net/io/netty/netty-all/4.1.9.Final/netty-all-4.1.9.Final.pom
+2026-11-21T02:19:37.1966975Z Download https://maven.minecraftforge.net/net/java/dev/jna/jna/4.4.0/jna-4.4.0.pom
+2026-11-21T02:19:37.1967531Z Download https://maven.minecraftforge.net/com/google/code/gson/gson/2.8.0/gson-2.8.0.pom
+2026-11-21T02:19:37.1968229Z Download https://maven.minecraftforge.net/org/apache/commons/commons-parent/41/commons-parent-41.pom
+2026-11-21T02:19:37.2961176Z Download https://maven.minecraftforge.net/org/apache/apache/15/apache-15.pom
+2026-11-21T02:19:37.2961880Z Download https://maven.minecraftforge.net/com/google/code/gson/gson-parent/2.8.0/gson-parent-2.8.0.pom
+2026-11-21T02:19:37.2962170Z Download https://maven.minecraftforge.net/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.pom
+2026-11-21T02:19:37.2962830Z Download https://maven.minecraftforge.net/com/google/guava/guava-parent/21.0/guava-parent-21.0.pom
+2026-11-21T02:19:37.2963815Z Download https://maven.minecraftforge.net/org/apache/commons/commons-parent/39/commons-parent-39.pom
+2026-11-21T02:19:37.2964471Z Download https://maven.minecraftforge.net/io/netty/netty-parent/4.1.9.Final/netty-parent-4.1.9.Final.pom
+2026-11-21T02:19:37.3962554Z Download https://maven.minecraftforge.net/it/unimi/dsi/fastutil/7.1.0/fastutil-7.1.0.pom
+2026-11-21T02:19:37.3963422Z Download https://maven.minecraftforge.net/org/apache/apache/18/apache-18.pom
+2026-11-21T02:19:37.3964440Z Download https://maven.minecraftforge.net/org/apache/commons/commons-parent/33/commons-parent-33.pom
+2026-11-21T02:19:37.4961994Z Download https://maven.minecraftforge.net/org/apache/apache/16/apache-16.pom
+2026-11-21T02:19:37.4962749Z Download https://maven.minecraftforge.net/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5.pom
+2026-11-21T02:19:37.9960135Z Download https://maven.minecraftforge.net/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.pom
+2026-11-21T02:19:38.0960099Z Download https://maven.minecraftforge.net/org/ow2/asm/asm/6.2/asm-6.2.pom
+2026-11-21T02:19:38.0960609Z Download https://maven.minecraftforge.net/org/ow2/asm/asm-tree/6.2/asm-tree-6.2.pom
+2026-11-21T02:19:38.0960808Z Download https://maven.minecraftforge.net/org/ow2/asm/asm-util/6.2/asm-util-6.2.pom
+2026-11-21T02:19:38.0960925Z Download https://maven.minecraftforge.net/org/ow2/ow2/1.5/ow2-1.5.pom
+2026-11-21T02:19:38.1959341Z Download https://maven.minecraftforge.net/org/scala-lang/scala-actors/2.11.0/scala-actors-2.11.0.pom
+2026-11-21T02:19:38.2960415Z Download https://maven.minecraftforge.net/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.pom
+2026-11-21T02:19:38.2961068Z Download https://maven.minecraftforge.net/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.pom
+2026-11-21T02:19:38.3960605Z Download https://maven.minecraftforge.net/org/slf4j/slf4j-api/1.8.0-beta4/slf4j-api-1.8.0-beta4.pom
+2026-11-21T02:19:38.4960171Z Download https://maven.minecraftforge.net/org/slf4j/slf4j-parent/1.8.0-beta4/slf4j-parent-1.8.0-beta4.pom
+2026-11-21T02:19:38.4960714Z Download https://maven.minecraftforge.net/org/ow2/asm/asm-analysis/6.2/asm-analysis-6.2.pom
+2026-11-21T02:19:38.4961564Z Download https://maven.minecraftforge.net/com/typesafe/config/1.2.1/config-1.2.1.jar
+2026-11-21T02:19:38.4961884Z Download https://maven.minecraftforge.net/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2_mc/scala-continuations-library_2.11-1.0.2_mc.jar
+2026-11-21T02:19:38.4962511Z Download https://maven.minecraftforge.net/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2_mc/scala-continuations-plugin_2.11.1-1.0.2_mc.jar
+2026-11-21T02:19:38.4964342Z Download https://maven.minecraftforge.net/net/minecraftforge/mergetool/1.0.13/mergetool-1.0.13-forge.jar
+2026-11-21T02:19:38.4964868Z Download https://maven.minecraftforge.net/com/google/code/findbugs/jsr305/3.0.1/jsr305-3.0.1.jar
+2026-11-21T02:19:38.4965854Z Download https://maven.minecraftforge.net/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar
+2026-11-21T02:19:38.5960379Z Download https://maven.minecraftforge.net/org/ow2/asm/asm-debug-all/5.2/asm-debug-all-5.2.jar
+2026-11-21T02:19:38.5960901Z Download https://maven.minecraftforge.net/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar
+2026-11-21T02:19:38.5961336Z Download https://maven.minecraftforge.net/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar
+2026-11-21T02:19:38.5961600Z Download https://maven.minecraftforge.net/org/jline/jline/3.5.1/jline-3.5.1.jar
+2026-11-21T02:19:38.5961812Z Download https://maven.minecraftforge.net/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar
+2026-11-21T02:19:38.5962477Z Download https://maven.minecraftforge.net/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar
+2026-11-21T02:19:38.5962881Z Download https://maven.minecraftforge.net/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar
+2026-11-21T02:19:38.5965598Z Download https://libraries.minecraft.net/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar
+2026-11-21T02:19:38.5966119Z Download https://maven.minecraftforge.net/org/scala-lang/scala-actors/2.11.0/scala-actors-2.11.0.jar
+2026-11-21T02:19:38.5968431Z Download https://maven.minecraftforge.net/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar
+2026-11-21T02:19:38.5971723Z Download https://maven.minecraftforge.net/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar
+2026-11-21T02:19:38.5971897Z Download https://maven.minecraftforge.net/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar
+2026-11-21T02:19:38.6959737Z Download https://libraries.minecraft.net/lzma/lzma/0.0.1/lzma-0.0.1.jar
+2026-11-21T02:19:38.6960474Z Download https://libraries.minecraft.net/java3d/vecmath/1.5.2/vecmath-1.5.2.jar
+2026-11-21T02:19:38.7960894Z Download https://maven.minecraftforge.net/org/apache/maven/maven-artifact/3.5.3/maven-artifact-3.5.3.jar
+2026-11-21T02:19:38.7961629Z Download https://maven.minecraftforge.net/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar
+2026-11-21T02:19:38.7961971Z Download https://maven.minecraftforge.net/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar
+2026-11-21T02:19:38.7962616Z Download https://maven.minecraftforge.net/org/apache/logging/log4j/log4j-core/2.15.0/log4j-core-2.15.0.jar
+2026-11-21T02:19:38.7962933Z Download https://maven.minecraftforge.net/org/apache/logging/log4j/log4j-api/2.15.0/log4j-api-2.15.0.jar
+2026-11-21T02:19:38.7963191Z Download https://maven.minecraftforge.net/net/minecraftforge/legacydev/0.2.3.1/legacydev-0.2.3.1-fatjar.jar
+2026-11-21T02:19:38.8960654Z Download https://maven.minecraftforge.net/net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar
+2026-11-21T02:19:38.8961144Z Download https://libraries.minecraft.net/oshi-project/oshi-core/1.1/oshi-core-1.1.jar
+2026-11-21T02:19:38.8961305Z Download https://maven.minecraftforge.net/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar
+2026-11-21T02:19:38.8961419Z Download https://libraries.minecraft.net/com/mojang/patchy/1.3.9/patchy-1.3.9.jar
+2026-11-21T02:19:38.8961529Z Download https://libraries.minecraft.net/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar
+2026-11-21T02:19:38.9959850Z Download https://maven.minecraftforge.net/org/apache/logging/log4j/log4j-slf4j18-impl/2.15.0/log4j-slf4j18-impl-2.15.0.jar
+2026-11-21T02:19:38.9960405Z Download https://libraries.minecraft.net/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar
+2026-11-21T02:19:38.9960697Z Download https://libraries.minecraft.net/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar
+2026-11-21T02:19:39.0959374Z Download https://maven.minecraftforge.net/io/netty/netty-all/4.1.9.Final/netty-all-4.1.9.Final.jar
+2026-11-21T02:19:39.0960150Z Download https://libraries.minecraft.net/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar
+2026-11-21T02:19:39.1960334Z Download https://libraries.minecraft.net/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar
+2026-11-21T02:19:39.1960964Z Download https://maven.minecraftforge.net/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
+2026-11-21T02:19:39.1961395Z Download https://maven.minecraftforge.net/com/google/guava/guava/21.0/guava-21.0.jar
+2026-11-21T02:19:39.1961750Z Download https://maven.minecraftforge.net/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar
+2026-11-21T02:19:39.1962209Z Download https://maven.minecraftforge.net/commons-io/commons-io/2.5/commons-io-2.5.jar
+2026-11-21T02:19:39.1962405Z Download https://maven.minecraftforge.net/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar
+2026-11-21T02:19:39.1962546Z Download https://maven.minecraftforge.net/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar
+2026-11-21T02:19:39.1962713Z Download https://maven.minecraftforge.net/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar
+2026-11-21T02:19:39.1962882Z Download https://maven.minecraftforge.net/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar
+2026-11-21T02:19:39.1963082Z Download https://maven.minecraftforge.net/it/unimi/dsi/fastutil/7.1.0/fastutil-7.1.0.jar
+2026-11-21T02:19:39.1963246Z Download https://libraries.minecraft.net/com/mojang/realms/1.10.22/realms-1.10.22.jar
+2026-11-21T02:19:39.1963392Z Download https://libraries.minecraft.net/com/mojang/authlib/1.5.25/authlib-1.5.25.jar
+2026-11-21T02:19:39.2959611Z Download https://libraries.minecraft.net/org/lwjgl/lwjgl/lwjgl/2.9.4-nightly-20150209/lwjgl-2.9.4-nightly-20150209.jar
+2026-11-21T02:19:39.2960350Z Download https://maven.minecraftforge.net/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-linux.jar
+2026-11-21T02:19:39.2961009Z Download https://libraries.minecraft.net/org/lwjgl/lwjgl/lwjgl-platform/2.9.4-nightly-20150209/lwjgl-platform-2.9.4-nightly-20150209.jar
+2026-11-21T02:19:39.2961363Z Download https://libraries.minecraft.net/org/lwjgl/lwjgl/lwjgl_util/2.9.4-nightly-20150209/lwjgl_util-2.9.4-nightly-20150209.jar
+2026-11-21T02:19:39.2961620Z Download https://maven.minecraftforge.net/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-osx.jar
+2026-11-21T02:19:39.2961852Z Download https://maven.minecraftforge.net/org/ow2/asm/asm-util/6.2/asm-util-6.2.jar
+2026-11-21T02:19:39.2962169Z Download https://maven.minecraftforge.net/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-windows.jar
+2026-11-21T02:19:39.2962662Z Download https://maven.minecraftforge.net/org/ow2/asm/asm-analysis/6.2/asm-analysis-6.2.jar
+2026-11-21T02:19:39.2962852Z Download https://maven.minecraftforge.net/org/ow2/asm/asm-tree/6.2/asm-tree-6.2.jar
+2026-11-21T02:19:39.2963034Z Download https://libraries.minecraft.net/com/paulscode/codecwav/20101023/codecwav-20101023.jar
+2026-11-21T02:19:39.2963219Z Download https://maven.minecraftforge.net/org/ow2/asm/asm/6.2/asm-6.2.jar
+2026-11-21T02:19:39.2963516Z Download https://maven.minecraftforge.net/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar
+2026-11-21T02:19:39.3959840Z Download https://libraries.minecraft.net/com/mojang/text2speech/1.10.3/text2speech-1.10.3.jar
+2026-11-21T02:19:39.3960395Z Download https://libraries.minecraft.net/org/lwjgl/lwjgl/lwjgl-platform/2.9.4-nightly-20150209/lwjgl-platform-2.9.4-nightly-20150209-natives-linux.jar
+2026-11-21T02:19:39.3960623Z Download https://libraries.minecraft.net/com/mojang/text2speech/1.10.3/text2speech-1.10.3-natives-linux.jar
+2026-11-21T02:19:39.4959478Z Download https://maven.minecraftforge.net/org/slf4j/slf4j-api/1.8.0-beta4/slf4j-api-1.8.0-beta4.jar
+2026-11-21T02:19:41.4959948Z 
+2026-11-21T02:19:41.4960383Z > Task :clean
+2026-11-21T02:19:43.4960217Z 
+2026-11-21T02:19:43.4960644Z > Task :compileJava
+2026-11-21T02:19:43.4960805Z Setting up MCP environment
+2026-11-21T02:19:43.4961065Z Initializing steps
+2026-11-21T02:19:43.4961209Z Executing steps
+2026-11-21T02:19:43.4961372Z  > Running 'downloadManifest'
+2026-11-21T02:19:43.4961494Z  > Running 'downloadJson'
+2026-11-21T02:19:43.4961640Z  > Running 'downloadClient'
+2026-11-21T02:19:43.4961762Z  > Running 'downloadServer'
+2026-11-21T02:19:43.6959287Z  > Running 'stripClient'
+2026-11-21T02:19:45.1959620Z  > Running 'stripServer'
+2026-11-21T02:19:46.3961360Z  > Running 'merge'
+2026-11-21T02:19:47.3959463Z Stopping at requested step: /root/.gradle/caches/forge_gradle/mcp_repo/de/oceanlabs/mcp/mcp_config/1.12.2/joined/merge/output.jar
+2026-11-21T02:20:05.0959744Z [02:20:05] [main/INFO]: Writing debug log file accesstransform.log
+2026-11-21T02:20:05.0960179Z [02:20:05] [main/INFO]: Access Transformer processor running version 1.0.5+4+02b7b69
+2026-11-21T02:20:05.0960418Z [02:20:05] [main/INFO]: Command line arguments [--inJar, /root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-injected.jar, --outJar, /root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.12.2-14.23.5.2859_mapped_stable_39-1.12/forge-1.12.2-14.23.5.2859_mapped_stable_39-1.12.jar, --logFile, accesstransform.log, --atFile, /workspace/firebadnofire/dronesmc/build/_atJar_6/parent_at.cfg]
+2026-11-21T02:20:05.0960710Z [02:20:05] [main/INFO]: Reading from /root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-injected.jar
+2026-11-21T02:20:05.0960990Z [02:20:05] [main/INFO]: Writing to /root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.12.2-14.23.5.2859_mapped_stable_39-1.12/forge-1.12.2-14.23.5.2859_mapped_stable_39-1.12.jar
+2026-11-21T02:20:05.0961191Z [02:20:05] [main/INFO]: Transformer file /workspace/firebadnofire/dronesmc/build/_atJar_6/parent_at.cfg
+2026-11-21T02:20:05.0961390Z [02:20:05] [main/WARN]: Found existing output jar /root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.12.2-14.23.5.2859_mapped_stable_39-1.12/forge-1.12.2-14.23.5.2859_mapped_stable_39-1.12.jar, overwriting
+2026-11-21T02:20:06.1959063Z [02:20:06] [main/INFO]: JAR transformation complete /root/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.12.2-14.23.5.2859_mapped_stable_39-1.12/forge-1.12.2-14.23.5.2859_mapped_stable_39-1.12.jar
+2026-11-21T02:20:06.2959534Z Creating SRG -> MCP TSRG
+2026-11-21T02:20:15.1959752Z 
+2026-11-21T02:20:15.1960246Z > Task :processResources
+2026-11-21T02:20:15.1960417Z > Task :classes
+2026-11-21T02:20:15.1960675Z > Task :jar
+2026-11-21T02:20:15.1960809Z > Task :downloadMcpConfig
+2026-11-21T02:20:15.1960966Z > Task :extractSrg
+2026-11-21T02:20:15.6959162Z > Task :createMcpToSrg
+2026-11-21T02:20:15.9959209Z > Task :reobfJar
+2026-11-21T02:20:15.9959664Z > Task :assemble
+2026-11-21T02:20:16.0959241Z Download https://maven.minecraftforge.net/junit/junit/4.13.2/junit-4.13.2.pom
+2026-11-21T02:20:16.1958928Z Download https://maven.minecraftforge.net/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+2026-11-21T02:20:16.2959368Z Download https://maven.minecraftforge.net/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+2026-11-21T02:20:16.2959809Z Download https://maven.minecraftforge.net/junit/junit/4.13.2/junit-4.13.2.jar
+2026-11-21T02:20:16.2960029Z Download https://maven.minecraftforge.net/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+2026-11-21T02:20:16.3959457Z > Task :compileTestJava
+2026-11-21T02:20:16.3959819Z > Task :processTestResources NO-SOURCE
+2026-11-21T02:20:16.3959951Z > Task :testClasses
+2026-11-21T02:20:17.9503501Z > Task :test
+2026-11-21T02:20:17.9503815Z > Task :check
+2026-11-21T02:20:17.9503952Z > Task :build
+2026-11-21T02:20:17.9504135Z 
+2026-11-21T02:20:17.9504290Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 5.0.
+2026-11-21T02:20:17.9504453Z Use '--warning-mode all' to show the individual deprecation warnings.
+2026-11-21T02:20:17.9504605Z See https://docs.gradle.org/4.9/userguide/command_line_interface.html#sec:command_line_warnings
+2026-11-21T02:20:17.9504737Z 
+2026-11-21T02:20:17.9504907Z BUILD SUCCESSFUL in 54s
+2026-11-21T02:20:17.9505026Z 10 actionable tasks: 10 executed
+2026-11-21T02:20:18.2721844Z > Task :reobfJar
+2026-11-21T02:20:18.3035960Z {"version": "0.1.1-beta", "sha256": "f3114f496d7d635a7ebdbdd5de442eb395c12a3a90dcaa846af806cb531ec362", "commit": "abbaad5b6f83828dafc77e0b317f0f10733b964c", "tests": 14}
+2026-11-21T02:20:20.8425802Z {"version": "0.1.1-beta", "sha256": "f3114f496d7d635a7ebdbdd5de442eb395c12a3a90dcaa846af806cb531ec362", "commit": "abbaad5b6f83828dafc77e0b317f0f10733b964c", "tests": 14}
+2026-11-21T02:20:20.8516059Z gpg: keybox '/tmp/tmp.wF2pMxECtH/pubring.kbx' created
+2026-11-21T02:20:20.8522869Z gpg: /tmp/tmp.wF2pMxECtH/trustdb.gpg: trustdb created
+2026-11-21T02:20:20.8523363Z gpg: key E0B57400509953EC: public key "DronesMC disposable CI test key" imported
+2026-11-21T02:20:20.8566839Z gpg: key E0B57400509953EC: secret key imported
+2026-11-21T02:20:20.8567195Z gpg: Total number processed: 1
+2026-11-21T02:20:20.8567339Z gpg:               imported: 1
+2026-11-21T02:20:20.8567470Z gpg:       secret keys read: 1
+2026-11-21T02:20:20.8567630Z gpg:   secret keys imported: 1
+2026-11-21T02:20:20.8654599Z dronesmc-0.1.1-beta.jar: OK
+2026-11-21T02:20:22.1731161Z gpg: Signature made Sat Nov 21 02:20:20 2026 UTC
+2026-11-21T02:20:22.1731553Z gpg:                using RSA key C42D8DDEE1013493C7B263B2E0B57400509953EC
+2026-11-21T02:20:22.1731811Z gpg: Good signature from "DronesMC disposable CI test key" [unknown]
+2026-11-21T02:20:22.1732000Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:20:22.1732089Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:20:22.1732187Z Primary key fingerprint: C42D 8DDE E101 3493 C7B2  63B2 E0B5 7400 5099 53EC
+2026-11-21T02:20:22.4808703Z gpg: Signature made Sat Nov 21 02:20:22 2026 UTC
+2026-11-21T02:20:22.4808999Z gpg:                using RSA key C42D8DDEE1013493C7B263B2E0B57400509953EC
+2026-11-21T02:20:22.4809406Z gpg: Good signature from "DronesMC disposable CI test key" [unknown]
+2026-11-21T02:20:22.4809637Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-11-21T02:20:22.4809715Z gpg:          There is no indication that the signature belongs to the owner.
+2026-11-21T02:20:22.4809786Z Primary key fingerprint: C42D 8DDE E101 3493 C7B2  63B2 E0B5 7400 5099 53EC
+2026-11-21T02:20:22.4813179Z Signing fingerprint: C42D8DDEE1013493C7B263B2E0B57400509953EC
+2026-11-21T02:20:22.6119232Z {"signatures_verified": true, "wrong_password_rejected": true, "key": "disposable test key; production secrets not accessed"}
+2026-11-21T02:20:22.7498854Z With the provided path, there will be 3 files uploaded
+2026-11-21T02:20:22.7500614Z Starting artifact upload
+2026-11-21T02:20:22.7500698Z For more detailed logs during the artifact upload process, enable step-debugging: https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging#enabling-step-debug-logging
+2026-11-21T02:20:22.7500901Z Artifact name is valid!
+2026-11-21T02:20:22.8438724Z Container for artifact "distributable" successfully created. Starting upload of file(s)
+2026-11-21T02:20:23.0237720Z Total size of all the files uploaded is 36713 bytes
+2026-11-21T02:20:23.0238151Z File upload process has finished. Finalizing the artifact upload
+2026-11-21T02:20:23.1156455Z Artifact has been finalized. All files have been successfully uploaded!
+2026-11-21T02:20:23.1156670Z 
+2026-11-21T02:20:23.1156811Z The raw size of all the files that were specified for upload is 40080 bytes
+2026-11-21T02:20:23.1156950Z The size of all the files that were uploaded is 36713 bytes. This takes into account any gzip compression used to reduce the upload size, time and storage
+2026-11-21T02:20:23.1157124Z 
+2026-11-21T02:20:23.1157252Z Note: The size of downloaded zips can differ significantly from the reported size. For more information see: https://github.com/actions/upload-artifact#zipped-artifact-downloads 
+2026-11-21T02:20:23.1157416Z 
+2026-11-21T02:20:23.1157657Z Artifact distributable has been successfully uploaded!
+2026-11-21T02:20:23.2599605Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-21T02:20:23.2601382Z The least common ancestor is /workspace/firebadnofire/dronesmc. This will be the root directory of the artifact
+2026-11-21T02:20:23.2601828Z With the provided path, there will be 8 files uploaded
+2026-11-21T02:20:23.2603590Z Starting artifact upload
+2026-11-21T02:20:23.2603665Z For more detailed logs during the artifact upload process, enable step-debugging: https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging#enabling-step-debug-logging
+2026-11-21T02:20:23.2603830Z Artifact name is valid!
+2026-11-21T02:20:23.3743214Z Container for artifact "build-evidence" successfully created. Starting upload of file(s)
+2026-11-21T02:20:23.7398804Z Total size of all the files uploaded is 5863 bytes
+2026-11-21T02:20:23.7399235Z File upload process has finished. Finalizing the artifact upload
+2026-11-21T02:20:23.8515192Z Artifact has been finalized. All files have been successfully uploaded!
+2026-11-21T02:20:23.8515360Z 
+2026-11-21T02:20:23.8515486Z The raw size of all the files that were specified for upload is 28848 bytes
+2026-11-21T02:20:23.8515700Z The size of all the files that were uploaded is 5863 bytes. This takes into account any gzip compression used to reduce the upload size, time and storage
+2026-11-21T02:20:23.8515885Z 
+2026-11-21T02:20:23.8516007Z Note: The size of downloaded zips can differ significantly from the reported size. For more information see: https://github.com/actions/upload-artifact#zipped-artifact-downloads 
+2026-11-21T02:20:23.8516185Z 
+2026-11-21T02:20:23.8516355Z Artifact build-evidence has been successfully uploaded!
+2026-11-21T02:20:23.8814485Z ⭐ Run Post https://data.forgejo.org/actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880
+2026-11-21T02:20:23.8932785Z   🐳  docker exec cmd=[node /var/run/act/actions/46/865fabbe4973b9c8691b9171e29a9afe7afebceb11e20233e8bcf95a12ef01/dist/cleanup/index.js] user= workdir=
+2026-11-21T02:20:23.9981291Z   ✅  Success - Post https://data.forgejo.org/actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880
+2026-11-21T02:20:24.0253839Z ⭐ Run Post https://data.forgejo.org/actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-21T02:20:24.0378936Z   🐳  docker exec cmd=[node /var/run/act/actions/3d/5b2eba3b258dea2961b9920a76d54eb24f67b1a23daeb73baef119c180c5e0/dist/index.js] user= workdir=
+2026-11-21T02:20:24.1451955Z [command]/usr/bin/git version
+2026-11-21T02:20:24.1498618Z git version 2.39.5
+2026-11-21T02:20:24.1514800Z   ⚙  ***
+2026-11-21T02:20:24.1525643Z Temporarily overriding HOME='/tmp/979530f1-012b-4690-b170-dc01c79cdfce' before making global git config changes
+2026-11-21T02:20:24.1525895Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-21T02:20:24.1529146Z [command]/usr/bin/git config --global --add safe.directory /workspace/firebadnofire/dronesmc
+2026-11-21T02:20:24.1562574Z Removing SSH command configuration
+2026-11-21T02:20:24.1566450Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-21T02:20:24.1597434Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-21T02:20:24.1904747Z Removing HTTP extra header
+2026-11-21T02:20:24.1909245Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader
+2026-11-21T02:20:24.1935217Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/pubcode\.archuser\.org\/\.extraheader' && git config --local --unset-all 'http.https://pubcode.archuser.org/.extraheader' || :"
+2026-11-21T02:20:24.2246065Z Removing includeIf entries pointing to credentials config files
+2026-11-21T02:20:24.2253652Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-21T02:20:24.2285373Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-21T02:20:24.2680631Z   ✅  Success - Post https://data.forgejo.org/actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-21T02:20:24.2873944Z 🏁  Job succeeded
