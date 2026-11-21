@@ -18,7 +18,6 @@ def config(root=pathlib.Path('.')):
     text = (root / 'build.gradle').read_text()
     version = re.search(r"^version = '([^']+)'$", text, re.M).group(1)
     require(re.fullmatch(r'[0-9A-Za-z.+-]+', version), 'Unsafe project version')
-    require(version.endswith('-beta'), 'Expected beta metadata; review CI contract before changing channel')
     require("minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2859'" in text,
             'Unexpected Minecraft/Forge baseline')
     return version

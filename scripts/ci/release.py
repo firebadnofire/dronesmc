@@ -114,7 +114,7 @@ def notes(record):
             record['version'] + '\nBuild system: Gradle\nJava: 8\nMinecraft: 1.12.2\nForge: 14.23.5.2859\nLicense: AGPL-3.0\n\n' +
             f"Validation: Gradle build/reobfJar and {record['tests']} unit tests passed; exact-JAR Forge dedicated-server "
             'startup, loaded-mod initialization, >=10 seconds healthy after world readiness, and graceful shutdown passed. '
-            'SHA-256 and detached GPG signatures verified.\n\nBeta software, published as an ordinary release intentionally. '
+            'Local SHA-256 and detached GPG signatures verified. Remote asset downloads are not verified.\n\n'
             'Runtime smoke testing does not verify rendering, flight controls, multiplayer synchronization, or full modpack compatibility.\n')
 
 
