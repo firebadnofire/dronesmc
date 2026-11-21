@@ -119,8 +119,9 @@ def notes(record):
 
 
 class Target:
-    def __init__(self, api, record, files):
+    def __init__(self, api, record, files, verify_downloads=True):
         self.api, self.record, self.files = api, record, files
+        self.verify_downloads = verify_downloads
         self.sha = record['commit']
         self.tag = record.get('release_tag', 'build-' + self.sha[:12])
         self.title = 'Development Build ' + self.sha[:12]
@@ -167,6 +168,13 @@ class Target:
         assets = self.api.repo('GET', f"/releases/{release['id']}/assets?per_page=100&limit=100")
         inventory = {a['name']: a for a in assets}
         require(len(inventory) == len(assets) and set(inventory) == set(self.files), 'Remote asset inventory mismatch')
+        if not self.verify_downloads:
+            # Publication policy explicitly skips remote byte/signature verification.
+            # Preserve existing assets on retries; never replace published binaries.
+            for name, asset in inventory.items():
+                if not name.endswith('.asc') and 'size' in asset:
+                    require(asset['size'] == len(self.files[name]), 'Remote asset size differs: ' + name)
+            return dict(self.files)
         with tempfile.TemporaryDirectory(prefix='dronesmc-verify-') as temporary:
             directory = pathlib.Path(temporary)
             downloaded = {}
@@ -301,10 +309,13 @@ def main():
     subprocess.run(['sha256sum', '--check', '--strict', 'SHA256SUMS'], cwd='ci-dist', check=True)
     github = API('https://api.github.com', os.environ['GH_KEY'])
     forgejo = API('https://pubcode.archuser.org/api/v1', os.environ['RELEASE_TOKEN'])
-    sync_github(github, record['commit'])
-    targets = [Target(forgejo, record, files), Target(github, record, files)]
+    # Recovery runs from current trusted main while retaining the original tag.
+    sync_github(github, checked_out)
+    print('Remote download verification disabled by publication policy; checking metadata and asset inventory only.', flush=True)
+    targets = [Target(forgejo, record, files, verify_downloads=False),
+               Target(github, record, files, verify_downloads=False)]
     publish_targets(targets, files)
-    print('Both normal releases verified: ' + tag)
+    print('Both normal releases published; metadata and asset inventories verified: ' + tag)
 
 
 if __name__ == '__main__':

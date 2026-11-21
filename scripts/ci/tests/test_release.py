@@ -85,6 +85,17 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(self.api.tag, 'b' * 40)
         self.assertIsNone(self.api.release)
 
+    def test_publication_without_downloads_still_checks_inventory_and_finalizes(self):
+        target = Target(self.api, self.record, self.files, verify_downloads=False)
+        with patch.object(target, 'asset_bytes', side_effect=AssertionError('Download forbidden')):
+            target.finalize(target.stage())
+            self.assertFalse(self.api.release['draft'])
+            target.finalize(target.stage())
+            self.assertEqual(self.api.assets, self.files)
+            del self.api.assets['SHA256SUMS']
+            with self.assertRaisesRegex(RuntimeError, 'inventory mismatch'):
+                target.check_assets(self.api.release)
+
     def test_changed_published_binary_is_rejected(self):
         with patch.object(self.target, 'asset_bytes', side_effect=lambda a: self.api.assets[a['name']]), \
              patch('release.subprocess.run'):
