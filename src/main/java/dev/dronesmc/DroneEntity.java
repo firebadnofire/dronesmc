@@ -52,6 +52,10 @@ public final class DroneEntity extends Entity {
     private void state(State state) { dataManager.set(STATE, state.ordinal()); }
     @Override public boolean canBeCollidedWith() { return !isDead; }
     @Override public boolean canBePushed() { return false; }
+    @Override public void applyEntityCollision(Entity entity) {
+        // Neither the drone nor a player touching it should receive entity pushes.
+        // Block collision remains handled by move() on client and server.
+    }
     @Override public float getEyeHeight() { return 0.3F; }
     @Override public boolean isInRangeToRenderDist(double distance) { return distance < 256 * 256; }
 

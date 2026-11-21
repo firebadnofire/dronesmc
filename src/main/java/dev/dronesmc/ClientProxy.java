@@ -45,6 +45,8 @@ public final class ClientProxy extends CommonProxy {
     private DroneEntity active;
     private float bodyYaw, bodyPitch;
     private float cameraYaw, cameraPitch;
+    private float lookStartYaw, lookStartPitch;
+    private boolean lookPending;
     private boolean landRequested;
     private boolean releaseInteractions;
     private int exitingEntity = -1;
@@ -134,6 +136,15 @@ public final class ClientProxy extends CommonProxy {
         // Keep the near plane and armor out of the camera when flying through the body.
         return !bodyBox.grow(0.25).contains(camera);
     }
+    @SubscribeEvent public void renderTick(TickEvent.RenderTickEvent event) {
+        Minecraft mc = Minecraft.getMinecraft();
+        if (event.phase == TickEvent.Phase.START && active != null && mc.player != null) {
+            // Tick/network rotation corrections have already happened. Only the
+            // following render-frame mouse turn is input for the drone camera.
+            lookStartYaw = mc.player.rotationYaw; lookStartPitch = mc.player.rotationPitch;
+            lookPending = true;
+        }
+    }
     @SubscribeEvent public void camera(EntityViewRenderEvent.CameraSetup event) {
         Minecraft mc = Minecraft.getMinecraft();
         if (active == null || mc.player == null || event.getEntity() != active) return;
@@ -144,13 +155,19 @@ public final class ClientProxy extends CommonProxy {
         event.setPitch(cameraPitch);
     }
     private void captureLook(Minecraft mc) {
-        cameraYaw = net.minecraft.util.math.MathHelper.wrapDegrees(cameraYaw
-                + net.minecraft.util.math.MathHelper.wrapDegrees(mc.player.rotationYaw - bodyYaw));
-        cameraPitch = net.minecraft.util.math.MathHelper.clamp(cameraPitch + mc.player.rotationPitch - bodyPitch, -90, 90);
+        if (lookPending) {
+            cameraYaw = net.minecraft.util.math.MathHelper.wrapDegrees(cameraYaw
+                    + net.minecraft.util.math.MathHelper.wrapDegrees(mc.player.rotationYaw - lookStartYaw));
+            cameraPitch = cameraPitchAfterMouse(cameraPitch, lookStartPitch, mc.player.rotationPitch);
+            lookPending = false;
+        }
         active.rotationYaw = active.prevRotationYaw = cameraYaw;
         active.rotationPitch = active.prevRotationPitch = cameraPitch;
         mc.player.rotationYaw = mc.player.prevRotationYaw = bodyYaw;
         mc.player.rotationPitch = mc.player.prevRotationPitch = bodyPitch;
+    }
+    static float cameraPitchAfterMouse(float cameraPitch, float beforeMouse, float afterMouse) {
+        return net.minecraft.util.math.MathHelper.clamp(cameraPitch + afterMouse - beforeMouse, -90, 90);
     }
     @SubscribeEvent public void input(InputUpdateEvent event) {
         if (active == null) return;
@@ -197,7 +214,6 @@ public final class ClientProxy extends CommonProxy {
         if (active.isDead || active.world != mc.world || active.pilotId() != mc.player.getEntityId() || !mc.player.isEntityAlive()) {
             restore(mc); return;
         }
-        captureLook(mc);
         int action = landRequested || (ctrl() && Keyboard.isKeyDown(Keyboard.KEY_E)) ? 2 : toggle ? 1 : 0;
         boolean input = mc.currentScreen == null && mc.inGameHasFocus && action == 0;
         float forward = input ? axis(mc.gameSettings.keyBindForward, mc.gameSettings.keyBindBack) : 0;
@@ -269,7 +285,7 @@ public final class ClientProxy extends CommonProxy {
         if (active != null) { releaseInteractions = true; clearInteractions(mc); }
         if (active != null) active.setClientControlled(false);
         if (active != null && mc.player != null) mc.setRenderViewEntity(mc.player);
-        active = null; landRequested = false; pendingMoves.clear();
+        active = null; landRequested = false; lookPending = false; pendingMoves.clear();
     }
     private static final class BatRenderer extends Render<DroneEntity> {
         private static final ResourceLocation TEXTURE = new ResourceLocation("minecraft:textures/entity/bat.png");

@@ -7,6 +7,16 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DroneEntityTest {
+    @Test public void touchingDroneCannotPushPlayerOrDrone() {
+        DroneEntity drone = new DroneEntity(null);
+        DroneEntity other = new DroneEntity(null);
+        drone.setPosition(0, 64, 0); other.setPosition(0.1, 64, 0);
+        drone.applyEntityCollision(other);
+        assertEquals(0, drone.motionX, 0);
+        assertEquals(0, drone.motionZ, 0);
+        assertEquals(0, other.motionX, 0);
+        assertEquals(0, other.motionZ, 0);
+    }
     @BeforeClass public static void initializeVanilla() { Bootstrap.register(); }
 
     @Test public void networkPositionUpdatesInterpolateInsteadOfSnapping() {

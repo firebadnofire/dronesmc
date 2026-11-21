@@ -6,6 +6,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ClientCameraTest {
+    @Test public void correctedBodyPitchIsNotCameraInput() {
+        assertEquals(12, ClientProxy.cameraPitchAfterMouse(12, -80, -80), 0);
+        assertEquals(15, ClientProxy.cameraPitchAfterMouse(12, -80, -77), 0);
+        assertEquals(-90, ClientProxy.cameraPitchAfterMouse(-89, 0, -5), 0);
+        assertEquals(90, ClientProxy.cameraPitchAfterMouse(89, 0, 5), 0);
+    }
     @Test public void cameraInsideBodyOrArmorDoesNotRenderLocalBody() {
         AxisAlignedBB body = new AxisAlignedBB(10, 64, 20, 10.6, 65.8, 20.6);
         assertFalse(ClientProxy.shouldRenderBody(new Vec3d(10.3, 65.6, 20.3), body));
