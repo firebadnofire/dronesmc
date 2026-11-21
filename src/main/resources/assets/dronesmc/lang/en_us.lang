@@ -1,0 +1,5 @@
+item.dronesmc.drone.name=Drone
+entity.dronesmc.drone.name=Drone
+key.categories.dronesmc=DronesMC
+key.dronesmc.exit=Toggle drone view (Ctrl: cycle drones)
+key.dronesmc.land=Return and land (hold Ctrl)

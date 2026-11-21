@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","pattern":["IRI","FGF","ICI"],"key":{"I":{"item":"minecraft:iron_ingot"},"R":{"item":"minecraft:redstone"},"F":{"item":"minecraft:feather"},"G":{"item":"minecraft:glass_pane"},"C":{"item":"minecraft:compass"}},"result":{"item":"dronesmc:drone","count":1}}

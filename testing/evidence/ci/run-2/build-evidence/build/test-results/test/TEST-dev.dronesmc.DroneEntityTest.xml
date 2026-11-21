@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.dronesmc.DroneEntityTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-21T02:01:51" hostname="docker" time="0.01">
+  <properties/>
+  <testcase name="locallyPredictedDroneDoesNotWaitForRemoteInterpolation" classname="dev.dronesmc.DroneEntityTest" time="0.008"/>
+  <testcase name="savesCustomNameWithoutPermanentOwnership" classname="dev.dronesmc.DroneEntityTest" time="0.0"/>
+  <testcase name="networkPositionUpdatesInterpolateInsteadOfSnapping" classname="dev.dronesmc.DroneEntityTest" time="0.0"/>
+  <testcase name="pendingLandingSurvivesSaveReloadWithoutRetainingPilot" classname="dev.dronesmc.DroneEntityTest" time="0.001"/>
+  <testcase name="rotationInterpolationTakesShortPathAcrossNorth" classname="dev.dronesmc.DroneEntityTest" time="0.0"/>
+  <testcase name="landedDroneDoesNotResumeStaleLandingRequest" classname="dev.dronesmc.DroneEntityTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

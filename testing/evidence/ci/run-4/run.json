@@ -1,0 +1,64 @@
+{
+  "id": 914,
+  "index_in_repo": 4,
+  "status": "success",
+  "commit_sha": "675c34968a9490357da9888618fb8206ff336f91",
+  "workflow_id": "preflight.yml",
+  "event": "push",
+  "prettyref": "codex/ci-preflight",
+  "jobs": [
+    {
+      "id": 3265,
+      "run_id": 914,
+      "attempt": 1,
+      "handle": "06e0ecd7-342a-438e-a2c8-d61e4a358c27",
+      "repo_id": 167,
+      "owner_id": 1,
+      "name": "build",
+      "html_url": "https://pubcode.archuser.org/firebadnofire/dronesmc/actions/runs/4/jobs/0/attempt/1",
+      "needs": null,
+      "runs_on": [
+        "ubuntu-22.04"
+      ],
+      "task_id": 2934,
+      "status": "success"
+    },
+    {
+      "id": 3266,
+      "run_id": 914,
+      "attempt": 1,
+      "handle": "e28a30ef-2086-4b42-895d-459676db2e7b",
+      "repo_id": 167,
+      "owner_id": 1,
+      "name": "minecraft-smoke",
+      "html_url": "https://pubcode.archuser.org/firebadnofire/dronesmc/actions/runs/4/jobs/1/attempt/1",
+      "needs": [
+        "build"
+      ],
+      "runs_on": [
+        "ubuntu-22.04"
+      ],
+      "task_id": 2935,
+      "status": "success"
+    },
+    {
+      "id": 3267,
+      "run_id": 914,
+      "attempt": 1,
+      "handle": "f8f032ee-c69d-48e1-805a-6e2665108722",
+      "repo_id": 167,
+      "owner_id": 1,
+      "name": "release",
+      "html_url": "https://pubcode.archuser.org/firebadnofire/dronesmc/actions/runs/4/jobs/2/attempt/1",
+      "needs": [
+        "build",
+        "minecraft-smoke"
+      ],
+      "runs_on": [
+        "ubuntu-22.04"
+      ],
+      "task_id": 0,
+      "status": "skipped"
+    }
+  ]
+}

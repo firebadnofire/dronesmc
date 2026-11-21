@@ -1,0 +1,11 @@
+{
+  "commit": "4bd7e49fc1c44882134ab2c992db6c32ea414cdf",
+  "sha256": "0311d1c66ada1e7f07dbbe717d042467cc2fe9c3b4dfcf3f4defc7bab0296c5e",
+  "version": "0.1.1-beta",
+  "startup": false,
+  "mod_loaded": false,
+  "observation": false,
+  "shutdown": false,
+  "passed": false,
+  "error": "HTTP Error 403: Forbidden"
+}

@@ -1,0 +1,36 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+/run-server/
+/logs/
+
+# CI staging and Python caches
+/ci-dist/
+/smoke-result/
+/.ci-gradlew
+/gradle-build.log
+/gradle-version.log
+__pycache__/
+*.pyc
+
+# Files from Forge MDK
+forge*changelog.txt

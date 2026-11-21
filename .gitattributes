@@ -1,0 +1,4 @@
+/gradlew text eol=lf
+/scripts/ci/*.sh text eol=lf
+/scripts/ci/*.py text eol=lf
+/.forgejo/workflows/*.yml text eol=lf

@@ -1,0 +1,12 @@
+2026-11-21T02:08:21.3132957Z Runner c3d6a19b-ccd0-43ce-94c4-98086e60a879 (version:v12.13.2) received task 2936 of job configuration, triggered by event: push
+2026-11-21T02:08:21.3157563Z workflow prepared
+2026-11-21T02:08:21.3340116Z 🚀  Start image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496
+2026-11-21T02:08:21.3474951Z   🐳  docker create image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496 platform=linux/amd64 entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+2026-11-21T02:08:21.4542979Z   🐳  docker run image=node:24-bookworm@sha256:9d266751ca3d7fdbe651c878ffd5ad0a42fed49a18c283509267c97f025b7496 platform=linux/amd64 entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+2026-11-21T02:08:21.6753321Z ⭐ Run Main Check presence without reading secret values into the environment
+2026-11-21T02:08:21.6792649Z   🐳  docker exec cmd=[sh /var/run/act/82496019f81fb1da.sh] user= workdir=
+2026-11-21T02:08:21.7267625Z   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/0.sh] user= workdir=
+2026-11-21T02:08:21.7943743Z CI_KEY_B64: configured
+2026-11-21T02:08:21.7944798Z CI_KEY_PASSPHRASE: configured
+2026-11-21T02:08:21.7944993Z GH_KEY: configured
+2026-11-21T02:08:21.8089347Z 🏁  Job succeeded
